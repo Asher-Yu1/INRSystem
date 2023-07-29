@@ -12,7 +12,7 @@ import java.util.Map;
 //成员共有的controller
 @Slf4j
 @RestController
-@RequestMapping("/members")
+@RequestMapping("/GeneralMembers")
 @Authorized(roles = {2})
 public class GeneralMemberController {
     @GetMapping("/test")

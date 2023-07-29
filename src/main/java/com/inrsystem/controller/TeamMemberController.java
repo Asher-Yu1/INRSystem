@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Slf4j
 @RestController
-@RequestMapping("/leader")
+@RequestMapping("/members")
 @Authorized(roles = {2},TeamRole = {0})
 public class TeamMemberController {
     @GetMapping("/test")
