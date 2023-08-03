@@ -20,7 +20,8 @@ public enum ErrorEnum {
     OBJECT_TO_MAP_ERROR(10001, "自定义类转化为map出错"),
     NOT_EXIST(10002,"该用户不存在"),
     EVENT_NOT_FIND(10003,"为查询到任何项目详细内容"),
-    ERROR_REMARK(10004,"未打分成功");
+    ERROR_REMARK(10004,"未打分成功"),
+    ERROR_GET_PERSONAL_INFORMATION(10005,"获取个人信息失败");
 
     private final Integer errCode;
     private final String errMsg;
