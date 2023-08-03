@@ -6,4 +6,5 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface CompanyService extends IService<Company> {
+    Company getCompany(String account);
 }
