@@ -2,10 +2,11 @@ package com.inrsystem.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.inrsystem.dao.Company;
+import com.inrsystem.dao.Team;
 import com.inrsystem.mapper.CompanyMapper;
+import com.inrsystem.mapper.TeamMapper;
 import com.inrsystem.service.CompanyService;
-import org.springframework.stereotype.Component;
+import com.inrsystem.service.TeamService;
 
-@Component
-public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> implements CompanyService {
+public class TeamServiceImpl  extends ServiceImpl<TeamMapper, Team> implements TeamService {
 }

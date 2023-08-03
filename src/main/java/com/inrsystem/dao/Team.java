@@ -1,6 +1,9 @@
 package com.inrsystem.dao;
 
-public class team {
+import lombok.Data;
+
+@Data
+public class Team {
     private Integer id;
     private String name;
 

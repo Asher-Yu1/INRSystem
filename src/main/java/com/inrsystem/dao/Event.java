@@ -1,8 +1,10 @@
 package com.inrsystem.dao;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import lombok.Data;
 
-public class event {
+@Data
+public class Event {
     private Integer id;
     @TableField("company_id")
     private Integer companyId;

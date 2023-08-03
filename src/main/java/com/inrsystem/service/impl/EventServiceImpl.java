@@ -2,10 +2,11 @@ package com.inrsystem.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.inrsystem.dao.Company;
+import com.inrsystem.dao.Event;
 import com.inrsystem.mapper.CompanyMapper;
+import com.inrsystem.mapper.EventMapper;
 import com.inrsystem.service.CompanyService;
-import org.springframework.stereotype.Component;
+import com.inrsystem.service.EventService;
 
-@Component
-public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> implements CompanyService {
+public class EventServiceImpl  extends ServiceImpl<EventMapper, Event> implements EventService {
 }

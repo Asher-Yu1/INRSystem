@@ -1,8 +1,10 @@
 package com.inrsystem.dao;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import lombok.Data;
 
-public class company {
+@Data
+public class Company {
     private String account;
     private String password;
     private Integer id;
@@ -11,4 +13,5 @@ public class company {
     private Integer eventId;
     @TableField("team_id")
     private Integer teamId;
+    private Integer role;
 }

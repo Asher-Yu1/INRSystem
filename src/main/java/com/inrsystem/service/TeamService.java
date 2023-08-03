@@ -2,8 +2,7 @@ package com.inrsystem.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.inrsystem.dao.Company;
-import org.springframework.stereotype.Component;
+import com.inrsystem.dao.Team;
 
-@Component
-public interface CompanyService extends IService<Company> {
+public interface TeamService extends IService<Team> {
 }

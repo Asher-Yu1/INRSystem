@@ -17,7 +17,8 @@ public enum ErrorEnum {
 
     REDIS_ERROR(9001, "redis错误"),
     REDIS_NOT_EXIST(9002, "登录过期"),
-    OBJECT_TO_MAP_ERROR(10001, "自定义类转化为map出错");
+    OBJECT_TO_MAP_ERROR(10001, "自定义类转化为map出错"),
+    NOT_EXIST(10002,"该用户不存在");
 
     private final Integer errCode;
     private final String errMsg;
