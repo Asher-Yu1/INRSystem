@@ -6,7 +6,13 @@ import lombok.Data;
 @Data
 public class Achievement {
     private Integer id;
-    @TableField("FileUrl")
-    private String fileUrl;
+    private String title;
+    private Integer type;
     private Integer remark;
+    @TableField("team_id")
+    private Integer teamId;
+    @TableField("file")
+    private String fileUrl;
+    private String description;
+
 }

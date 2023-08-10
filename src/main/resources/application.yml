@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mysql://47.113.218.236/INF_system
+    username: root
+    password: jhy123
+  data:
+    redis:
+      database: 0
+      host: 47.113.218.236
+      port: 6379
+      password: jhy123
+
+logging:
+  level:
+    root: INFO
+  console:
+    enabled: true
+  file:
+    name: logs/myapplication.log
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 5
+server:
+  port: 6666
+  address: 127.0.0.1
+jwt:
+  secret: riySrVRd9jKxqfixduh8  #jwt密钥
+  expiration: 2592000 #过期时间（3天）

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -34,6 +35,7 @@ public class LoginController {
     private AdministratorsMapper administratorsMapper;
     @Resource
     private TeamMembersMapper teamMembersMapper;
+    @PostMapping("/login")
     public Map<String,Object> login(@RequestBody Map<String,Object> map){
         String account = map.get("account").toString();
         boolean isAccountEmpty = account.equals("")|| account.isBlank();
@@ -47,27 +49,26 @@ public class LoginController {
             throw new LocalRunTimeException(ErrorEnum.UNFILLED_PASSWORD);
         }
         Map<String, Object> user = new HashMap<>();
-        boolean flag=true;
-        Company company = companyMapper.selectByMap(map).get(0);
-        Administrators administrators = administratorsMapper.selectByMap(map).get(0);
-        TeamMembers teamMembers = teamMembersMapper.selectByMap(map).get(0);
+        List<Company> company = companyMapper.selectByMap(map);
+        List<Administrators> administrators =  administratorsMapper.selectByMap(map);
+        List<TeamMembers> teamMembers =  teamMembersMapper.selectByMap(map);
         if (company==null&&administrators==null&&teamMembers==null){
             throw new LocalRunTimeException(ErrorEnum.NOT_EXIST);
         }
-        if(company!=null){
-            user.put("account",company.getAccount());
-            user.put("name",company.getName());
-            user.put("role",company.getRole());
+        if(!company.isEmpty()){
+            user.put("account",company.get(0).getAccount());
+            user.put("name",company.get(0).getName());
+            user.put("role",company.get(0).getRole());
         }
-        if (administrators!=null){
-            user.put("account",administrators.getAccount());
-            user.put("name",administrators.getName());
-            user.put("role",administrators.getRole());
+        if (!administrators.isEmpty()){
+            user.put("account",administrators.get(0).getAccount());
+            user.put("name",administrators.get(0).getName());
+            user.put("role",administrators.get(0).getRole());
         }
-        if(teamMembers!=null){
-            user.put("account",teamMembers.getAccount());
-            user.put("name",teamMembers.getName());
-            user.put("role",teamMembers.getRole());
+        if(!teamMembers.isEmpty()){
+            user.put("account",teamMembers.get(0).getAccount());
+            user.put("name",teamMembers.get(0).getName());
+            user.put("role",teamMembers.get(0).getRole());
         }
         // 创建token
         String token = jwtUtil.createToken(user);

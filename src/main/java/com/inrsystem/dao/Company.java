@@ -9,9 +9,5 @@ public class Company {
     private String password;
     private Integer id;
     private String name;
-    @TableField("event_id")
-    private Integer eventId;
-    @TableField("team_id")
-    private Integer teamId;
     private Integer role;
 }

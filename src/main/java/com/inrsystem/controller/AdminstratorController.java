@@ -4,6 +4,7 @@ import com.inrsystem.annotation.Authorized;
 import com.inrsystem.dao.Event;
 import com.inrsystem.enums.ErrorEnum;
 import com.inrsystem.exception.LocalRunTimeException;
+import com.inrsystem.mapper.AchievementMapper;
 import com.inrsystem.mapper.EventMapper;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +21,8 @@ import java.util.Map;
 public class AdminstratorController {
     @Resource
     private EventMapper eventMapper;
+    @Resource
+    private AchievementMapper achievementMapper;
     @GetMapping("/test")
     public Map<String, Object> getInfo(@RequestAttribute("info") Map<String, Object> info) {
         Map<String, Object> map = new HashMap<>();
@@ -30,14 +33,13 @@ public class AdminstratorController {
     @GetMapping("/getEventInformation")
     public List<Map<String,Object>> getEventInformation(@RequestAttribute("info") Map<String, Object> info){
         List<Map<String, Object>> list = new ArrayList<>();
-        List<Event> events = eventMapper.selectList(null);
+        List<Event> events = eventMapper.getEvents();
         if(events.isEmpty()){
             throw new LocalRunTimeException(ErrorEnum.EVENT_NOT_FIND);
         }
         for (Event e:events) {
             Map<String,Object> map =new HashMap<>();
             map.put("company_id",e.getCompanyId());
-            map.put("team_id",e.getTeamId());
             map.put("event_id",e.getId());
             map.put("event_name",e.getName());
             map.put("description",e.getDescription());
@@ -54,6 +56,16 @@ public class AdminstratorController {
         Integer eventId = (Integer) map.get("event_id");
         Integer remark = (Integer) map.get("remark");
         Boolean aBoolean = eventMapper.updateEventState(remark, eventId);
+        if (aBoolean==false){
+            throw new LocalRunTimeException(ErrorEnum.ERROR_REMARK);
+        }
+    }
+   //审核成果
+    @PostMapping("/auditAchievement")
+    public void auditAchievement(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
+        int remark = Integer.parseInt(map.get("remark").toString());
+        Integer achievement_id = Integer.parseInt(map.get("achievement_id").toString());
+        Boolean aBoolean = achievementMapper.updateAchievementRemark(remark, achievement_id);
         if (aBoolean==false){
             throw new LocalRunTimeException(ErrorEnum.ERROR_REMARK);
         }

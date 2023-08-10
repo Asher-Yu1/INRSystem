@@ -50,7 +50,7 @@ public class JwtUtil {
                 .withClaim("timestamp", currentTimestamp)
                 .sign(algorithmHS);
         try {
-            redisUtil.set("TOKEN:"+user.get("id").toString(), token, expiration);
+            redisUtil.set("TOKEN:"+user.get("account").toString(), token, expiration);
         } catch (Exception e) {
             throw new LocalRunTimeException(ErrorEnum.REDIS_ERROR);
         }
