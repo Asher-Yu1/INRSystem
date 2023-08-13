@@ -14,5 +14,4 @@ public class Achievement {
     @TableField("file")
     private String fileUrl;
     private String description;
-
 }
