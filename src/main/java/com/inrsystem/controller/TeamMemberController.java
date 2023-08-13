@@ -94,7 +94,7 @@ public class TeamMemberController {
         }
     }
     }
-//    //获取团队信息
+//      //获取团队信息
 //@GetMapping("/getTeamInformation")
 //    public Map<String,Object> getTeamInformation(@RequestAttribute("info") Map<String,Object> info){
 //    Map<String, Object> selectMap = new HashMap<>();
@@ -124,7 +124,7 @@ public class TeamMemberController {
         Map<String,Object> map =new HashMap<>();
         Event event = eventMapper.selectById(eventId);
         if (event.getRemark()==0||event.getRemark()==1){
-            throw new LocalRunTimeException(ErrorEnum.NOT_REMARK);
+            throw new LocalRunTimeException(ErrorEnum.NOT_REMARK_THIS_EVENT);
         }
         if(event.getRemark()==2){
         map.put("company_id",event.getCompanyId());
