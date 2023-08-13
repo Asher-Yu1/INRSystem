@@ -9,5 +9,5 @@ public class Company {
     private String password;
     private Integer id;
     private String name;
-    private Integer role;
+   private Integer role;
 }

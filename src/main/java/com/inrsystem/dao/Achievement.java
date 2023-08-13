@@ -7,11 +7,10 @@ import lombok.Data;
 public class Achievement {
     private Integer id;
     private String title;
+    private String description;
     private Integer type;
-    private Integer remark;
     @TableField("team_id")
     private Integer teamId;
-    @TableField("file")
-    private String fileUrl;
-    private String description;
+    private String file;
+    private Integer remark;
 }

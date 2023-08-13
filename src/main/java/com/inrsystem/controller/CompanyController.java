@@ -64,8 +64,8 @@ public class CompanyController {
       map.put("title",achievement.getTitle());
       map.put("type",achievement.getType());
       map.put("member_id",achievement.getTeamId());
-      if(achievement.getFileUrl()!=null){
-          map.put("file",achievement.getFileUrl());
+      if(achievement.getFile()!=null){
+          map.put("file",achievement.getFile());
       }
       return map;
     }

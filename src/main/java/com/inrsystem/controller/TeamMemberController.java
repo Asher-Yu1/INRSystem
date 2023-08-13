@@ -154,7 +154,7 @@ public class TeamMemberController {
             achievement.setDescription(description);
             achievement.setRemark(0);
             if(map.get("file").toString()!=null){
-                achievement.setFileUrl(map.get("file").toString());
+                achievement.setFile(map.get("file").toString());
             }
             int insert = achievementMapper.insert(achievement);
             if(insert==0){

@@ -10,7 +10,7 @@ public class Event {
     private Integer companyId;
     private String name;
     private String description;
-    private double price;
+    private Integer price;
     private Integer remark;
     private Integer state;
 }
