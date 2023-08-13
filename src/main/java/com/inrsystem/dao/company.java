@@ -9,6 +9,7 @@ public class company {
     private String name;
     @TableField("event_id")
     private Integer eventId;
+
     @TableField("team_id")
     private Integer teamId;
 }
