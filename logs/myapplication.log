@@ -57,3 +57,20 @@
 2023-08-13T19:45:41.165+08:00  WARN 14872 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
 2023-08-13T19:45:41.412+08:00  INFO 14872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6666 (http) with context path ''
 2023-08-13T19:45:41.419+08:00  INFO 14872 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 1.986 seconds (process running for 2.411)
+2023-08-13T20:03:51.737+08:00  INFO 29408 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 29408 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-08-13T20:03:51.739+08:00  INFO 29408 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-08-13T20:03:52.319+08:00  INFO 29408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-13T20:03:52.321+08:00  INFO 29408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-13T20:03:52.346+08:00  INFO 29408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-08-13T20:03:52.823+08:00  INFO 29408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6666 (http)
+2023-08-13T20:03:52.824+08:00  INFO 29408 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2023-08-13T20:03:52.824+08:00  INFO 29408 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2023-08-13T20:03:52.826+08:00  INFO 29408 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2023-08-13T20:03:52.834+08:00  INFO 29408 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-13T20:03:52.834+08:00  INFO 29408 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-13T20:03:52.902+08:00  INFO 29408 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-13T20:03:52.902+08:00  INFO 29408 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1135 ms
+2023-08-13T20:03:53.427+08:00  WARN 29408 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-08-13T20:03:53.428+08:00  WARN 29408 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-13T20:03:53.702+08:00  INFO 29408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6666 (http) with context path ''
+2023-08-13T20:03:53.709+08:00  INFO 29408 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.333 seconds (process running for 2.782)
