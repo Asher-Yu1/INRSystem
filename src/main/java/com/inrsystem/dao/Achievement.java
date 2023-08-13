@@ -1,16 +1,16 @@
 package com.inrsystem.dao;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import lombok.Data;
 
-public class event {
+@Data
+public class Achievement {
     private Integer id;
-    @TableField("company_id")
-    private Integer companyId;
+    private String title;
+    private String description;
+    private Integer type;
     @TableField("team_id")
     private Integer teamId;
-    private String name;
-    private String description;
-    private Integer price;
+    private String file;
     private Integer remark;
-    private Integer state;
 }

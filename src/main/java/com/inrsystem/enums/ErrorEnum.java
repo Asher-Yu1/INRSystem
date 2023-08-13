@@ -17,7 +17,19 @@ public enum ErrorEnum {
 
     REDIS_ERROR(9001, "redis错误"),
     REDIS_NOT_EXIST(9002, "登录过期"),
-    OBJECT_TO_MAP_ERROR(10001, "自定义类转化为map出错");
+    OBJECT_TO_MAP_ERROR(10001, "自定义类转化为map出错"),
+    NOT_EXIST(10002,"该用户不存在"),
+    EVENT_NOT_FIND(10003,"为查询到任何项目详细内容"),
+    ERROR_REMARK(10004,"未打分成功"),
+    ERROR_GET_ACHIEVEMENT_INFORMATION(10005,"获取科研成果失败"),
+    ERROR_INSERT(10006,"insert失败"),
+    NAME_EXIST(10007,"该队名已存在"),
+    ERROR_GET_MEMBER_INFORMATION(10008,"未获取到成员信息"),
+    ERROR_CREAT_TEAM(10009,"创建团队失败"),
+
+    ERROR_ADD_ACHIEVEMENT(20002,"添加成就失败"),
+    NOT_REMARK_THIS_EVENT(20003,"尚未审核");
+
 
     private final Integer errCode;
     private final String errMsg;

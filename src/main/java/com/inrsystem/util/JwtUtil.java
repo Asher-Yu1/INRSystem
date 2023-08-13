@@ -44,13 +44,13 @@ public class JwtUtil {
                 //受众
                 .withAudience("users")
                 //自定义载荷
-                .withClaim("id", user.get("id").toString())
+                .withClaim("account", user.get("account").toString())
                 .withClaim("name", user.get("name").toString())
                 .withClaim("role", user.get("role").toString())
                 .withClaim("timestamp", currentTimestamp)
                 .sign(algorithmHS);
         try {
-            redisUtil.set("TOKEN:"+user.get("id").toString(), token, expiration);
+            redisUtil.set("TOKEN:"+user.get("account").toString(), token, expiration);
         } catch (Exception e) {
             throw new LocalRunTimeException(ErrorEnum.REDIS_ERROR);
         }
@@ -62,8 +62,8 @@ public class JwtUtil {
             JWTVerifier verifier = JWT.require(Algorithm.HMAC256(secret)).build();
             DecodedJWT decodedJWT = verifier.verify(token);
             Map<String, Claim> claims = decodedJWT.getClaims();
-            if (isExpired("TOKEN:"+claims.get("id").asString())) {
-                redisUtil.set("TOKEN:"+claims.get("id").asString(), token, expiration);
+            if (isExpired("TOKEN:"+claims.get("account").asString())) {
+                redisUtil.set("TOKEN:"+claims.get("account").asString(), token, expiration);
                 return decodedJWT.getClaims();
             }
             throw new LocalRunTimeException(ErrorEnum.REDIS_NOT_EXIST);
@@ -79,7 +79,7 @@ public class JwtUtil {
     public Map<String, Object> getInfoFromToken(String token) {
         Map<String, Claim> jwt = verifyToken(token);
         Map<String, Object> info = new HashMap<>();
-        info.put("id", jwt.get("id").asString());
+        info.put("account", jwt.get("account").asString());
         info.put("role", jwt.get("role").asString());
         return info;
     }
