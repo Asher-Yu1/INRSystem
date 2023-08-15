@@ -1,6 +1,7 @@
 package com.inrsystem.controller;
 
 import com.inrsystem.annotation.Authorized;
+import com.inrsystem.dao.Achievement;
 import com.inrsystem.dao.Event;
 import com.inrsystem.enums.ErrorEnum;
 import com.inrsystem.exception.LocalRunTimeException;
@@ -43,7 +44,7 @@ public class AdminstratorController {
             map.put("event_id",e.getId());
             map.put("event_name",e.getName());
             map.put("description",e.getDescription());
-            map.put("price",e.getPrice());
+            map.put("price",e.getBudget());
             map.put("remark",e.getRemark());
             map.put("state",e.getState());
             list.add(map);
@@ -69,5 +70,10 @@ public class AdminstratorController {
         if (aBoolean==false){
             throw new LocalRunTimeException(ErrorEnum.ERROR_REMARK);
         }
+    }
+
+    @GetMapping("/getAchievementInformation")
+    public Achievement getAchievement(@RequestAttribute("info") Map<String, Object> info,@RequestParam("team_id")Integer teamId){
+        return achievementMapper.selectById(teamId);
     }
 }
