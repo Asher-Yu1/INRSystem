@@ -50,7 +50,7 @@ public class CompanyController {
         event.setCompanyId(company.getId());
         event.setName(map.get("event_name").toString());
         event.setDescription(map.get("description").toString());
-        event.setPrice((Integer) map.get("price"));
+        event.setBudget((Integer) map.get("price"));
         event.setRemark(0);
         event.setState(0);
         eventMapper.insert(event);
@@ -85,7 +85,7 @@ public class CompanyController {
               map.put("event_id",event.getId());
               map.put("event_name",event.getDescription());
               map.put("remark",event.getRemark());
-              map.put("price",event.getPrice());
+              map.put("price",event.getBudget());
               map.put("state",event.getState());
               if(event.getState()==2&&team_eventMapper.getState(team_eventMapper.getTeamID(event.getId()))==1){
                   map.put("team_id",team_eventMapper.getTeamID(event.getId()));

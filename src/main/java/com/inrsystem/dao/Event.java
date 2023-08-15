@@ -12,7 +12,10 @@ public class Event {
     private Integer companyId;
     private String name;
     private String description;
-    private Integer price;
+    //预算
+    private double budget;
+    //价格
+    private double reservePrice;
     private Integer remark;
     private Integer state;
     @TableField("start_time")

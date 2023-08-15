@@ -131,7 +131,7 @@ public class TeamMemberController {
         map.put("event_id",eventId);
         map.put("event_name",event.getName());
         map.put("description",event.getDescription());
-            map.put("price",event.getPrice());
+            map.put("budget",event.getBudget());
         if (event.getState()==2){
             map.put("team_id",team_eventMapper.getTeamID(eventId));
         }

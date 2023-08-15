@@ -22,7 +22,7 @@ logging:
       max-file-size: 10MB
       max-history: 5
 server:
-  port: 6666
+  port: 6667
   host: 47.113.218.236
 jwt:
   secret: riySrVRd9jKxqfixduh8  #jwt密钥
