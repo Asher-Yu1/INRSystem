@@ -21,4 +21,7 @@ public interface AchievementMapper extends BaseMapper<Achievement> {
     Achievement getAchievementByTeamId (@Param("team_Id")Integer team_Id);
     @Update("UPDATE achievement SET remark=#{remark} WHERE remark=0 AND id=#{achievement_id}")
     Boolean updateAchievementRemark(@Param("remark")Integer remark, @Param("achievement_id") Integer achievementId);
+
+    @Select("SELECT * FROM achievement WHERE team_id=#{team_Id} AND type=#{type}")
+    Achievement getAchievementByTeamIdAndType (@Param("team_Id")Integer team_Id,@Param("type") Integer type);
 }
