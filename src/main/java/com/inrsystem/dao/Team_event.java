@@ -9,6 +9,12 @@ public class Team_event {
     private Integer teamId;
     @TableField("event_id")
     private Integer eventId;
-    private double price;
+    //报价
+    private double bid;
     private Integer state;
+    //酬劳
+    private double salary;
+    //分数
+    @TableField (exist = false)
+    private double  score;
 }
