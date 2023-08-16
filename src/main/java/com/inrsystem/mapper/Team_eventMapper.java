@@ -19,4 +19,6 @@ public interface Team_eventMapper extends BaseMapper<Team_event> {
     Integer getState(@Param("team_id") Integer teamId);
     @Select("SELECT team_id FROM team_event WHERE event_id=#{event_id} And state=0")
     List<Integer> getAllTeamId(@Param("event_id") Integer eventId);
+
+
 }
