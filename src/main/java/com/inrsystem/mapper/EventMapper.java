@@ -23,5 +23,5 @@ public interface EventMapper extends BaseMapper<Event> {
     @Select("SELECT * FROM `event` WHERE company_id=#{id}")
     List<Event> getEventsByCompanyId(@Param("id") Integer companyId);
     @Update("UPDATE event SET start_time=#{startTime},end_time=#{end_time} WHERE id=#{event_id}")
-    Boolean updateTime(@Param("startTime")Long start,@Param("endTime")Long end,@Param("price")Double price);
+    Integer updateTime(@Param("startTime")Long start,@Param("endTime")Long end,@Param("price")Double price);
 }

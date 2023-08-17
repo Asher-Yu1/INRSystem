@@ -16,5 +16,5 @@ public class Team_event {
     private double salary;
     //分数
     @TableField (exist = false)
-    private double  score;
+    private double  achievementScore;
 }

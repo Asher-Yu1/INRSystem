@@ -23,7 +23,7 @@ logging:
       max-history: 5
 server:
   port: 6667
-  host: 47.113.218.236
+  host: 127.0.0.1
 jwt:
   secret: riySrVRd9jKxqfixduh8  #jwt密钥
   expiration: 2592000 #过期时间（3天）

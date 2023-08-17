@@ -3,15 +3,21 @@ package com.inrsystem.controller;
 import com.inrsystem.SimHash;
 import com.inrsystem.dao.Achievement;
 import com.inrsystem.dao.Event;
+import com.inrsystem.dao.Team;
+import com.inrsystem.dao.Team_event;
 import com.inrsystem.mapper.AchievementMapper;
 import com.inrsystem.mapper.EventMapper;
 import com.inrsystem.mapper.Team_eventMapper;
 import jakarta.annotation.Resource;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.swing.*;
 import java.util.*;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 @RestController
 public class textualSimilarityController {
@@ -21,28 +27,185 @@ public class textualSimilarityController {
     private EventMapper eventMapper;
     @Resource
     private Team_eventMapper team_eventMapper;
+
     //获取匹配到的team_id
-    private List<Integer> getAllowedTeam(Integer eventId) {
+    @PostMapping ("/analyse")
+    public List<Team_event> getAllowedTeam(@RequestBody Map<String,Object> map ) {
+        Integer eventId = Integer.parseInt(map.get("event_id").toString());
         Event event = eventMapper.selectById(eventId);
-        List<Integer> teamIds = team_eventMapper.getAllTeamId(eventId);
-        List<Double> scores =new LinkedList<>();
-        List<Integer> returnId =new LinkedList<>();
-        List<Map<String,Object>> teamScores =new ArrayList<>();
-        for (Integer teamId:teamIds) {
-            Map<String,Object> teamScore =new HashMap<>();
-            double score = getScore(event, teamId);
-            scores.add(score);
-            teamScore.put("team_id",teamId);
-            teamScore.put("score",score);
-            teamScores.add(teamScore);
+        //根据任务id获取竞标团队
+        List<Team_event> team_events=team_eventMapper.getAllByEventId(eventId);
+        team_events.forEach(team_event -> team_event.setAchievementScore(getScore(event, team_event.getTeamId())));
+        List<Team_event> team_events1 = auctionByTaskType(event, team_events);
+        team_eventMapper.winingTeam(team_events1.get(0).getSalary(),team_events1.get(0).getTeamId(),
+                                    team_events1.get(0).getEventId(),team_events1.get(0).getBid());
+
+        return team_events1;
+    }
+
+
+    private List<Team_event> auctionByTaskType(Event event, List<Team_event> team_events){
+        int auctionType=event.getType();
+        return switch (auctionType) {
+            case 0 -> bfdauction(event, team_events);
+            case 1 -> vcgauction(event, team_events);
+            case 2 -> maxauction(event, team_events);
+            default -> null;
+        };
+
+    }
+
+    /**
+     * list 只有一个对象 值选择一个科研团队 固定价格  交易
+     * @param event
+     * @param team_events
+     * @return
+     */
+    private List<Team_event> maxauction(Event event, List<Team_event> team_events) {
+        Team_event winner=
+                team_events.stream().max((o1, o2) -> (int) (o1.getAchievementScore()-o2.getAchievementScore())).get();
+        winner.setState(1);
+        winner.setSalary(event.getReservePrice());
+        return List.of(winner);
+    }
+
+    /**
+     * 选择一个科研团队实现效用最大化 没有成本限制的竞标 vcg机制
+     * @param event
+     * @param team_events
+     * @return
+     */
+    private List<Team_event> vcgauction(Event event, List<Team_event> team_events) {
+        List<Team_event> winners=new ArrayList<>();
+        Team_event bestWin=null;
+        double maxWelfare=Integer.MIN_VALUE;
+        for (Team_event team_event:team_events){
+            double welfare=100*Math.log(10*team_event.getAchievementScore())-team_event.getBid();
+            if (welfare>maxWelfare){
+                maxWelfare=welfare;
+                bestWin=team_event;
+            }
         }
-        Double maxScore = getMaxScore(scores);
-        for (Map<String,Object> m:teamScores) {
-            double score = Double.parseDouble(m.get("score").toString());
-            if(score==maxScore)
-                returnId.add(Integer.parseInt(m.get("team_id").toString()));
+        double TmpMaxWelfare=Integer.MIN_VALUE;
+        for (Team_event team_event:team_events){
+            if (team_event.equals(bestWin)){
+                continue;
+            }
+            double welfare=100*Math.log(10*team_event.getAchievementScore())-team_event.getBid();
+            TmpMaxWelfare=Math.max(TmpMaxWelfare,welfare);
+
         }
-        return returnId;
+        double payMent=TmpMaxWelfare-maxWelfare;
+        bestWin.setSalary(payMent);
+        winners.add(bestWin);
+        return winners;
+    }
+
+    /**
+     * 带有预算的效用最大化拍卖
+     * @param event
+     * @param team_events
+     * @return 获胜者 状态为1 并设置了报酬
+     */
+    private List<Team_event> bfdauction(Event event, List<Team_event> team_events) {
+
+        HashMap<Integer,Double> salrys=new HashMap<>();
+        double budget= event.getBudget();
+        List<Team_event> bidders =
+                team_events.stream().filter(team_event -> team_event.getBid() < event.getBudget()).collect(Collectors.toList());
+        List<Team_event> biddderCopy=new ArrayList<>(bidders);
+        List<Team_event> winners=new ArrayList<>();
+        double max=0;
+        Team_event maxTeam=null;
+        for (Team_event team_event:bidders){
+            double comUitity=Math.log(10*team_event.getAchievementScore())/team_event.getBid();
+            if (comUitity>max){
+                maxTeam=team_event;
+                max=comUitity;
+            }
+        }
+        if (maxTeam==null){
+            return winners;
+        }
+        boolean flag=maxTeam.getBid()<budget/2;
+        while (bidders.size()>0&&flag){
+            winners.add(maxTeam);
+            bidders.remove(maxTeam);
+            double pre=compute(winners);
+            max=0;
+            maxTeam=null;
+            double curUit=0;
+            for (Team_event team_event:bidders){
+                curUit=compute(winners,team_event);
+                double marignUitity=(curUit-pre)/team_event.getBid();
+                if (marignUitity>max){
+                    max=marignUitity;
+                    maxTeam=team_event;
+                }
+            }
+            flag=maxTeam.getBid()<=budget*max/(2*curUit);
+        }
+        for (Team_event winner:winners){
+            List<Team_event> tmpTeam=new ArrayList<>(biddderCopy);
+            tmpTeam.remove(winner);
+            List<Team_event> tmpWin=new ArrayList<>();
+            double tmpMax=0;
+            Team_event tmpMaxTeam=null;
+            for (Team_event team_event:tmpTeam){
+                double comUitity=Math.log(10*team_event.getAchievementScore())/team_event.getBid();
+                if (comUitity>tmpMax){
+                    tmpMaxTeam=team_event;
+                    tmpMax=comUitity;
+                }
+            }
+            boolean tmpflag=tmpMaxTeam.getBid()<budget/2;
+            while (tmpTeam.size()>0&&tmpflag){
+                double pre=compute(tmpWin);
+                tmpMax=0;
+                tmpMaxTeam=null;
+                double curUit=0;
+                for (Team_event team_event:tmpTeam){
+                    curUit=compute(tmpWin,team_event);
+                    double marignUitity=(curUit-pre)/team_event.getBid();
+                    if (marignUitity>tmpMax){
+                        tmpMax=marignUitity;
+                        tmpMaxTeam=team_event;
+                    }
+                }
+                double fis=compute(tmpWin,winner)-compute(tmpWin);
+                salrys.put(winner.getTeamId(),Math.max(salrys.getOrDefault(winner.getTeamId(),  0.0)
+                        ,Math.min(budget*fis/(2*compute(tmpWin,winner)),fis*tmpMaxTeam.getBid()/tmpMax)));
+                tmpflag=tmpMaxTeam.getBid()<=budget*tmpMax/(2*curUit);
+
+                tmpWin.add(tmpMaxTeam);
+                tmpTeam.remove(tmpMaxTeam);
+            }
+        }
+        for (Team_event winner :winners){
+            winner.setState(1);
+            winner.setSalary(salrys.get(winner.getTeamId()));
+        }
+        return winners;
+    }
+
+    private double compute(List<Team_event> winners, Team_event team_event) {
+        double totalScore=0;
+        for (Team_event event:winners){
+            totalScore+=event.getAchievementScore();
+        }
+        totalScore+=team_event.getAchievementScore();
+        return 100*Math.log(10*totalScore);
+    }
+
+    private double compute(List<Team_event> S){
+        if(S.isEmpty()){
+            return 0;
+        }
+        double totalScore=0;
+        for (Team_event event:S){
+            totalScore+=event.getAchievementScore();
+        }
+        return  100*Math.log(10*totalScore);
     }
 
 
@@ -51,16 +214,22 @@ public class textualSimilarityController {
         double score = 0;
         //0为论文*0.5，1为专利*0.7，2为项目*1
         for (int i = 0; i < 3; i++) {
-            Achievement achievement = achievementMapper.getAchievementByTeamIdAndType(teamId, i);
-
+           if(achievementMapper.getAchievementByTeamIdAndType(teamId, i)==null){
+               continue;
+           }
+           else {
+               Achievement achievement = achievementMapper.getAchievementByTeamIdAndType(teamId, i);
             SimHash hash1 = new SimHash(achievement.getDescription(), 64);
             double semblance = hash1.getSemblance(new SimHash(event.getDescription(), 64));
-            if (i == 0)
-                score += semblance * 0.5;
-            if (i == 1)
+            if (i == 0) {
+                score += semblance *0.5;
+            }
+            if (i == 1) {
                 score += semblance * 0.7;
-            if (i == 2)
-                score += semblance * 1;
+            }
+            if (i == 2) {
+                score += semblance ;
+            }}
         }
         return score;
     }
@@ -68,7 +237,6 @@ public class textualSimilarityController {
     //比较大小
     private Double getMaxScore(List<Double> list){
         return Collections.max(list);
-
     }
 
 

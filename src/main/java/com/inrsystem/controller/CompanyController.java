@@ -13,12 +13,15 @@ import com.inrsystem.mapper.Team_eventMapper;
 import com.inrsystem.service.CompanyService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static java.lang.Double.POSITIVE_INFINITY;
 
 @Slf4j
 @RestController
@@ -50,7 +53,22 @@ public class CompanyController {
         event.setCompanyId(company.getId());
         event.setName(map.get("event_name").toString());
         event.setDescription(map.get("description").toString());
-        event.setBudget((Integer) map.get("price"));
+        //预算
+        if(map.get("price").toString()!=null){
+        event.setBudget(Double.parseDouble(map.get("price").toString()));}
+        //固定价格
+        if(map.get("reservePrice").toString()!=null){
+            event.setReservePrice(Double.parseDouble(map.get("reservePrice").toString()));
+        }
+        if(map.get("price").toString()!=null&&map.get("reservePrice").toString()==null){
+            event.setType(0);
+        }
+        if(map.get("price").toString()==null&&map.get("reservePrice").toString()==null){
+            event.setType(1);
+        }
+        if(map.get("price").toString()==null&&map.get("reservePrice").toString()!=null){
+            event.setType(2);
+        }
         event.setRemark(0);
         event.setState(0);
         eventMapper.insert(event);
