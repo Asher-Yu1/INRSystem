@@ -11,6 +11,7 @@ public class TeamMembers {
   private String password;
   private String name;
   private Integer id;
+  private String email;
   @TableField("team_id")
   private Integer teamId;
   private Integer role;

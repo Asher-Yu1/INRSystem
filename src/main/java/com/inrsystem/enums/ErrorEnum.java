@@ -28,7 +28,8 @@ public enum ErrorEnum {
     ERROR_CREAT_TEAM(10009,"创建团队失败"),
 
     ERROR_ADD_ACHIEVEMENT(20002,"添加成就失败"),
-    NOT_REMARK_THIS_EVENT(20003,"尚未审核");
+    NOT_REMARK_THIS_EVENT(20003,"尚未审核"),
+   MULTIPLY_NAME(40003,"该队名已存在");
 
 
     private final Integer errCode;

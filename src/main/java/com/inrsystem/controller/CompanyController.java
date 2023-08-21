@@ -4,21 +4,22 @@ import com.inrsystem.annotation.Authorized;
 import com.inrsystem.dao.Achievement;
 import com.inrsystem.dao.Company;
 import com.inrsystem.dao.Event;
+import com.inrsystem.dao.Team;
 import com.inrsystem.enums.ErrorEnum;
 import com.inrsystem.exception.LocalRunTimeException;
-import com.inrsystem.mapper.AchievementMapper;
-import com.inrsystem.mapper.CompanyMapper;
-import com.inrsystem.mapper.EventMapper;
-import com.inrsystem.mapper.Team_eventMapper;
+import com.inrsystem.mapper.*;
 import com.inrsystem.service.CompanyService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static java.lang.Double.POSITIVE_INFINITY;
 
 @Slf4j
 @RestController
@@ -35,6 +36,8 @@ public class CompanyController {
    private AchievementMapper achievementMapper;
    @Resource
    private Team_eventMapper team_eventMapper;
+   @Resource
+   private TeamMapper teamMapper;
     @GetMapping("/test")
     public Map<String, Object> getInfo(@RequestAttribute("info") Map<String, Object> info) {
         Map<String, Object> map = new HashMap<>();
@@ -50,7 +53,22 @@ public class CompanyController {
         event.setCompanyId(company.getId());
         event.setName(map.get("event_name").toString());
         event.setDescription(map.get("description").toString());
-        event.setBudget((Integer) map.get("price"));
+        //预算
+        if(map.get("price").toString()!=null){
+        event.setBudget(Double.parseDouble(map.get("price").toString()));}
+        //固定价格
+        if(map.get("reservePrice").toString()!=null){
+            event.setReservePrice(Double.parseDouble(map.get("reservePrice").toString()));
+        }
+        if(map.get("price").toString()!=null&&map.get("reservePrice").toString()==null){
+            event.setType(0);
+        }
+        if(map.get("price").toString()==null&&map.get("reservePrice").toString()==null){
+            event.setType(1);
+        }
+        if(map.get("price").toString()==null&&map.get("reservePrice").toString()!=null){
+            event.setType(2);
+        }
         event.setRemark(0);
         event.setState(0);
         eventMapper.insert(event);
@@ -93,6 +111,29 @@ public class CompanyController {
              list.add(map);
           }
           return list;
+    }
+    //获取中标团队的信息
+    @GetMapping("/getTeamInformation")
+    public List<Map<String,Object>> getTeamInformation(@RequestAttribute("info")Map<String,Object> info){
+        List<Map<String,Object>> list =new ArrayList<>();
+        Integer id = companyMapper.selectByMap(info).get(0).getId();
+        List<Event> eventsByCompanyId = eventMapper.getEventsByCompanyId(id);
+        for (Event e:eventsByCompanyId) {
+            if(e.getState()!=2)
+                continue;
+            else {
+                Map<String,Object> map =new HashMap<>();
+                List<Integer> allowedTeamId = team_eventMapper.getAllowedTeamId(e.getId());
+                for (Integer teamId :allowedTeamId) {
+                    Team team = teamMapper.selectById(teamId);
+                    map.put("team_id",team.getId());
+                    map.put("team_name",team.getName());
+                    map.put("event_id",e.getId());
+                    list.add(map);
+                }
+            }
+        }
+        return list;
     }
 
 

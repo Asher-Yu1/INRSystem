@@ -19,7 +19,9 @@ public class WebConfig extends WebMvcConfigurationSupport {
         registry.addInterceptor(new RequestLoggingInterceptor()).addPathPatterns("/**");
         registry.addInterceptor(tokenInterceptor)
                 .addPathPatterns("/**") //所有路径都被拦截
-                .excludePathPatterns("/login") ;// 排除用户登录请求
+                .excludePathPatterns("/login") // 排除用户登录请求
+                .excludePathPatterns("/analyse")
+                .excludePathPatterns("/research/getEvent");
 
 
     }
