@@ -4,12 +4,10 @@ import com.inrsystem.annotation.Authorized;
 import com.inrsystem.dao.Achievement;
 import com.inrsystem.dao.Company;
 import com.inrsystem.dao.Event;
+import com.inrsystem.dao.Team;
 import com.inrsystem.enums.ErrorEnum;
 import com.inrsystem.exception.LocalRunTimeException;
-import com.inrsystem.mapper.AchievementMapper;
-import com.inrsystem.mapper.CompanyMapper;
-import com.inrsystem.mapper.EventMapper;
-import com.inrsystem.mapper.Team_eventMapper;
+import com.inrsystem.mapper.*;
 import com.inrsystem.service.CompanyService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +36,8 @@ public class CompanyController {
    private AchievementMapper achievementMapper;
    @Resource
    private Team_eventMapper team_eventMapper;
+   @Resource
+   private TeamMapper teamMapper;
     @GetMapping("/test")
     public Map<String, Object> getInfo(@RequestAttribute("info") Map<String, Object> info) {
         Map<String, Object> map = new HashMap<>();
@@ -111,6 +111,29 @@ public class CompanyController {
              list.add(map);
           }
           return list;
+    }
+    //获取中标团队的信息
+    @GetMapping("/getTeamInformation")
+    public List<Map<String,Object>> getTeamInformation(@RequestAttribute("info")Map<String,Object> info){
+        List<Map<String,Object>> list =new ArrayList<>();
+        Integer id = companyMapper.selectByMap(info).get(0).getId();
+        List<Event> eventsByCompanyId = eventMapper.getEventsByCompanyId(id);
+        for (Event e:eventsByCompanyId) {
+            if(e.getState()!=2)
+                continue;
+            else {
+                Map<String,Object> map =new HashMap<>();
+                List<Integer> allowedTeamId = team_eventMapper.getAllowedTeamId(e.getId());
+                for (Integer teamId :allowedTeamId) {
+                    Team team = teamMapper.selectById(teamId);
+                    map.put("team_id",team.getId());
+                    map.put("team_name",team.getName());
+                    map.put("event_id",e.getId());
+                    list.add(map);
+                }
+            }
+        }
+        return list;
     }
 
 

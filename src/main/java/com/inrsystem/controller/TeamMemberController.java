@@ -1,10 +1,7 @@
 package com.inrsystem.controller;
 
 import com.inrsystem.annotation.Authorized;
-import com.inrsystem.dao.Achievement;
-import com.inrsystem.dao.Event;
-import com.inrsystem.dao.Team;
-import com.inrsystem.dao.TeamMembers;
+import com.inrsystem.dao.*;
 import com.inrsystem.enums.ErrorEnum;
 import com.inrsystem.exception.LocalRunTimeException;
 import com.inrsystem.mapper.*;
@@ -54,6 +51,7 @@ public class TeamMemberController {
         TeamMembers teamMembers = teamMembersMapper.selectByMap(map).get(0);
         Integer teamId = teamMembers.getTeamId();
         map.put("team_id",teamId);
+        map.put("name",teamMembers.getName());
         map.put("id",teamMembers.getId());
         Team team = teamMapper.selectById(teamId);
         achievementMap.put("team_id",team.getId());
@@ -68,6 +66,9 @@ public class TeamMemberController {
    @PostMapping("/createTeam")
     public void creatTeam(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
     String teamName = map.get("teamName").toString();
+    if(teamMapper.getSameName(teamName)>0){
+        throw new LocalRunTimeException(ErrorEnum.MULTIPLY_NAME);
+    }
     Map<String, Object> selectMap = new HashMap<>();
     selectMap.put("name",teamName);
     List<Team> teams = teamMapper.selectByMap(selectMap);
@@ -163,6 +164,38 @@ public class TeamMemberController {
         }
     }
 
+    @GetMapping("/getEvent")
+    public List<Event> getAllEvent(){
+        List<Event> list=new ArrayList<>();
+        for (Event event:eventMapper.getAllEvents()) {
+            if (event.getState()==0){
+                list.add(event);
+            }
+        }
+        return list;
+    }
+
+    //获取中标的任务信息
+    @GetMapping("/getSuccessfullyEventInformation")
+    public List<Map<String,Object>> getSuccessEvent(@RequestAttribute("info") Map<String,Object> info){
+     List<Map<String,Object>> list =new ArrayList<>();
+        List<Team_event> statedByTeamId = team_eventMapper.getStatedByTeamId(teamMembersMapper.selectByMap(info).get(0).getTeamId());
+        for (Team_event t:statedByTeamId) {
+          Map<String, Object> map = new HashMap<>();
+            Event event = eventMapper.selectById(t.getEventId());
+            map.put("company_id",event.getCompanyId());
+            map.put("event_id",event.getId());
+            map.put("event_name",event.getName());
+            map.put("description",event.getDescription());
+            map.put("bid",t.getBid());
+            if(t.getSalary()!=0){
+            map.put("salary",t.getSalary());}
+            map.put("start_time",event.getStartTime());
+            map.put("end_time",event.getEndTime());
+            list.add(map);
+        }
+        return list;
+    }
 
 
 }

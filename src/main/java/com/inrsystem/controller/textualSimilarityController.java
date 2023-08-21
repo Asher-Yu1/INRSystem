@@ -3,20 +3,16 @@ package com.inrsystem.controller;
 import com.inrsystem.SimHash;
 import com.inrsystem.dao.Achievement;
 import com.inrsystem.dao.Event;
-import com.inrsystem.dao.Team;
 import com.inrsystem.dao.Team_event;
 import com.inrsystem.mapper.AchievementMapper;
 import com.inrsystem.mapper.EventMapper;
 import com.inrsystem.mapper.Team_eventMapper;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.swing.*;
 import java.util.*;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 @RestController
@@ -95,7 +91,7 @@ public class textualSimilarityController {
             TmpMaxWelfare=Math.max(TmpMaxWelfare,welfare);
 
         }
-        double payMent=TmpMaxWelfare-maxWelfare;
+        double payMent=maxWelfare-TmpMaxWelfare;
         bestWin.setSalary(payMent);
         winners.add(bestWin);
         return winners;
