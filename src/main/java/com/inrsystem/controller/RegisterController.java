@@ -32,6 +32,7 @@ public class RegisterController {
         String password = map.get("password").toString();
         int role = Integer.parseInt(map.get("role").toString());
         String name = map.get("name").toString();
+        String email = map.get("email").toString();
         //管理员
         if(role==0){
             Administrators administrators = new Administrators();
@@ -39,6 +40,7 @@ public class RegisterController {
             administrators.setPassword(password);
             administrators.setRole(role);
             administrators.setName(name);
+            administrators.setEmail(email);
             int insert = administratorsMapper.insert(administrators);
             if(insert==0){
                 throw new LocalRunTimeException(ErrorEnum.ERROR_INSERT);
@@ -51,6 +53,7 @@ public class RegisterController {
             company.setPassword(password);
             company.setRole(role);
             company.setName(name);
+            company.setEmail(email);
             int insert = companyMapper.insert(company);
             if(insert==0){
                 throw new LocalRunTimeException(ErrorEnum.ERROR_INSERT);
@@ -61,6 +64,7 @@ public class RegisterController {
             TeamMembers teamMembers = new TeamMembers();
             teamMembers.setAccount(account);
             teamMembers.setPassword(password);
+            teamMembers.setEmail(email);
             teamMembers.setRole(role);
             teamMembers.setName(name);
             int insert = teamMembersMapper.insert(teamMembers);
