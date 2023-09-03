@@ -51,10 +51,12 @@ public class TeamMemberController {
         TeamMembers teamMembers = teamMembersMapper.selectByMap(map).get(0);
         Integer teamId = teamMembers.getTeamId();
         map.put("team_id",teamId);
+
         map.put("name",teamMembers.getName());
         map.put("id",teamMembers.getId());
         Team team = teamMapper.selectById(teamId);
         achievementMap.put("team_id",team.getId());
+        achievementMap.put("team_name",team.getName());
         List<Achievement> achievements = achievementMapper.selectByMap(achievementMap);
         map.put("achievements",achievements);
         if (map.isEmpty()){
@@ -62,7 +64,12 @@ public class TeamMemberController {
         }
        return map;
     }
-@Authorized(TeamRole = 1)
+    //获取团队的成员
+    @GetMapping("/getTeamMembers")
+    public List<TeamMembers> gerTeamMembers(@RequestAttribute("info") Map<String, Object> info){
+        TeamMembers teamMembers = teamMembersMapper.selectByMap(info).get(0);
+        return teamMembersMapper.getSameTeamMembers(teamMembers.getTeamId());
+    }
    @PostMapping("/createTeam")
     public void creatTeam(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
     String teamName = map.get("teamName").toString();
@@ -81,7 +88,7 @@ public class TeamMemberController {
     if(insert==0){
         throw new LocalRunTimeException(ErrorEnum.ERROR_INSERT);
     }
-    selectMap.put("name",teamName);
+    //selectMap.put("name",teamName);
     Team team1 = teamMapper.selectByMap(selectMap).get(0);
     Integer id = team1.getId();
     List<Map<String,Object>> members = (List<Map<String, Object>>) map.get("members");
@@ -89,10 +96,16 @@ public class TeamMemberController {
         throw new LocalRunTimeException(ErrorEnum.ERROR_GET_MEMBER_INFORMATION);
     }
     for (Map<String,Object> m:members) {
-        Boolean aBoolean = teamMembersMapper.creatTeam(id, (Integer) m.get("team_role"),(Integer) m.get("id"), m.get("name").toString());
+        String name = m.get("name").toString();
+        TeamMembers teamMembers = teamMembersMapper.getMembersByName(name).get(0);
+        if(teamMembers.getTeamId()!=null){
+            throw new LocalRunTimeException(ErrorEnum.MULTIPLY_ENTER);
+        }
+        else {
+        Boolean aBoolean = teamMembersMapper.creatTeam(id, (Integer) m.get("team_role"), m.get("name").toString());
         if(!aBoolean){
             throw new LocalRunTimeException(ErrorEnum.ERROR_CREAT_TEAM);
-        }
+        }}
     }
     }
 //      //获取团队信息

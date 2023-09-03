@@ -22,9 +22,10 @@ public interface EventMapper extends BaseMapper<Event> {
     List<Event> getEvents();
     @Select("SELECT * FROM `event` WHERE company_id=#{id} AND remark=2")
     List<Event> getEventsByCompanyId(@Param("id") Integer companyId);
-    @Update("UPDATE event SET start_time=#{startTime},end_time=#{end_time} WHERE id=#{event_id}")
-    Integer updateTime(@Param("startTime")Long start,@Param("endTime")Long end,@Param("price")Double price);
+
     @Select("SELECT * FROM `event` WHERE remark=2" )
     List<Event> getAllEvents();
+    @Update("UPDATE event SET end_time=#{end_time} WHERE id=#{event_id}")
+    Integer setEndTime(@Param("end_time") Date time,@Param("event_id")Integer eventId);
 
 }

@@ -52,9 +52,9 @@ public class AdminstratorController {
         return list;
     }
     //审核公司任务
-    @PostMapping("/auditEvents")
-    public void auditEvents(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
-        Integer eventId = (Integer) map.get("event_id");
+    @PostMapping("auditEvents/{id}")
+    public void auditEvents(@RequestAttribute("info") Map<String, Object> info,@PathVariable("id")Integer eventId,
+                            @RequestBody()Map<String,Object> map){
         Integer remark = (Integer) map.get("remark");
         Boolean aBoolean = eventMapper.updateEventState(remark, eventId);
         if (aBoolean==false){

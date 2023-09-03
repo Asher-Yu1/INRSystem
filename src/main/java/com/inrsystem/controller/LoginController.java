@@ -73,6 +73,9 @@ public class LoginController {
         // 创建token
         String token = jwtUtil.createToken(user);
         user.put("token", token);
+        if(user.isEmpty()){
+            throw new LocalRunTimeException(ErrorEnum.NOT_SIGN);
+        }
         return user;
     }
 

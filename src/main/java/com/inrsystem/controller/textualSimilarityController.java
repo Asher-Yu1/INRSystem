@@ -3,11 +3,19 @@ package com.inrsystem.controller;
 import com.inrsystem.SimHash;
 import com.inrsystem.dao.Achievement;
 import com.inrsystem.dao.Event;
+import com.inrsystem.dao.TeamMembers;
 import com.inrsystem.dao.Team_event;
+import com.inrsystem.enums.ErrorEnum;
+import com.inrsystem.exception.LocalRunTimeException;
 import com.inrsystem.mapper.AchievementMapper;
 import com.inrsystem.mapper.EventMapper;
+import com.inrsystem.mapper.TeamMembersMapper;
 import com.inrsystem.mapper.Team_eventMapper;
 import jakarta.annotation.Resource;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,10 +31,13 @@ public class textualSimilarityController {
     private EventMapper eventMapper;
     @Resource
     private Team_eventMapper team_eventMapper;
-
+   @Resource
+   private TeamMembersMapper teamMembersMapper;
+    @Resource
+    private JavaMailSender javaMailSender;
     //获取匹配到的team_id
     @PostMapping ("/analyse")
-    public List<Team_event> getAllowedTeam(@RequestBody Map<String,Object> map ) {
+    public List<Team_event> getAllowedTeam(@RequestBody Map<String,Object> map ) throws MessagingException {
         Integer eventId = Integer.parseInt(map.get("event_id").toString());
         Event event = eventMapper.selectById(eventId);
         //根据任务id获取竞标团队
@@ -35,7 +46,16 @@ public class textualSimilarityController {
         List<Team_event> team_events1 = auctionByTaskType(event, team_events);
         team_eventMapper.winingTeam(team_events1.get(0).getSalary(),team_events1.get(0).getTeamId(),
                                     team_events1.get(0).getEventId(),team_events1.get(0).getBid());
-
+        List<String> emails=new ArrayList<>();
+        List<TeamMembers> sameTeamMembers = teamMembersMapper.getSameTeamMembers(team_events1.get(0).getEventId());
+        for (TeamMembers t:sameTeamMembers) {
+            emails.add(t.getEmail());
+        }
+        if(emails.isEmpty()){
+            throw new LocalRunTimeException(ErrorEnum.COMMON_ERROR);
+        }
+        sendMail(emails);
+        eventMapper.setEndTime(new Date(System.currentTimeMillis()),eventId);
         return team_events1;
     }
 
@@ -235,6 +255,23 @@ public class textualSimilarityController {
         return Collections.max(list);
     }
 
+    //对中标的团队发送邮件
+    public void sendMail(List<String> to) throws MessagingException {
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        // 构建一个邮件对象
+        MimeMessageHelper helper = new MimeMessageHelper(mimeMessage,true);
+        // 设置邮件主题
+        helper.setSubject("恭喜您成功中标");
+        // 设置邮件发送者，这个跟application.yml中设置的要一致
+        helper.setFrom("15358755057@163.com");
+        helper.setTo(to.toString());
+        // 设置邮件发送日期
+        helper.setSentDate(new Date());
+        // 设置邮件的正文 true：是html文件
+        helper.setText("<h1 >感谢您在此竞标中的付出和辛勤努力，祝贺您成为最终的赢家。</h1>"+"<p>(详细信息请于我的合作中查看)</p>",true);
+        // 发送邮件
+        javaMailSender.send(mimeMessage);
+    }
 
 
 }
