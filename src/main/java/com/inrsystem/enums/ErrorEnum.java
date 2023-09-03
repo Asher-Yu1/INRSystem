@@ -29,7 +29,9 @@ public enum ErrorEnum {
 
     ERROR_ADD_ACHIEVEMENT(20002,"添加成就失败"),
     NOT_REMARK_THIS_EVENT(20003,"尚未审核"),
-   MULTIPLY_NAME(40003,"该队名已存在");
+   MULTIPLY_NAME(40003,"该队名已存在"),
+   MULTIPLY_ENTER(40004,"该成员已加入其他科研团队"),
+   NOT_SIGN(40005,"账号密码不存在");
 
 
     private final Integer errCode;

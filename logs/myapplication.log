@@ -1,8 +1,32 @@
-2023-08-21T09:30:57.595+08:00  INFO 15968 --- [main] c.inrsystem.InrSystemApplicationTests    : Starting InrSystemApplicationTests using Java 17.0.8 with PID 15968 (started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-08-21T09:30:57.600+08:00  INFO 15968 --- [main] c.inrsystem.InrSystemApplicationTests    : No active profile set, falling back to 1 default profile: "default"
-2023-08-21T09:30:58.532+08:00  INFO 15968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-08-21T09:30:58.534+08:00  INFO 15968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-08-21T09:30:58.565+08:00  INFO 15968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-2023-08-21T09:30:59.737+08:00  WARN 15968 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-08-21T09:30:59.738+08:00  WARN 15968 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-08-21T09:31:00.293+08:00  INFO 15968 --- [main] c.inrsystem.InrSystemApplicationTests    : Started InrSystemApplicationTests in 2.996 seconds (process running for 4.083)
+2023-09-03T16:54:38.310+08:00  INFO 36000 --- [main] c.inrsystem.InrSystemApplicationTests    : Starting InrSystemApplicationTests using Java 17.0.8 with PID 36000 (started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-03T16:54:38.315+08:00  INFO 36000 --- [main] c.inrsystem.InrSystemApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2023-09-03T16:54:39.221+08:00  INFO 36000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-03T16:54:39.224+08:00  INFO 36000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-03T16:54:39.253+08:00  INFO 36000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-09-03T16:54:40.472+08:00  WARN 36000 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-03T16:54:40.473+08:00  WARN 36000 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-03T16:54:41.417+08:00  INFO 36000 --- [main] c.inrsystem.InrSystemApplicationTests    : Started InrSystemApplicationTests in 3.424 seconds (process running for 4.494)
+2023-09-03T18:48:21.663+08:00  INFO 9368 --- [main] c.inrsystem.InrSystemApplicationTests    : Starting InrSystemApplicationTests using Java 17.0.8 with PID 9368 (started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-03T18:48:21.665+08:00  INFO 9368 --- [main] c.inrsystem.InrSystemApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2023-09-03T18:48:22.604+08:00  INFO 9368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-03T18:48:22.606+08:00  INFO 9368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-03T18:48:22.635+08:00  INFO 9368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-09-03T18:48:23.789+08:00  WARN 9368 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-03T18:48:23.790+08:00  WARN 9368 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-03T18:48:24.718+08:00  INFO 9368 --- [main] c.inrsystem.InrSystemApplicationTests    : Started InrSystemApplicationTests in 3.439 seconds (process running for 4.703)
+2023-09-03T18:54:50.455+08:00  INFO 11904 --- [main] c.inrsystem.InrSystemApplicationTests    : Starting InrSystemApplicationTests using Java 17.0.8 with PID 11904 (started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-03T18:54:50.458+08:00  INFO 11904 --- [main] c.inrsystem.InrSystemApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2023-09-03T18:54:51.176+08:00  INFO 11904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-03T18:54:51.178+08:00  INFO 11904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-03T18:54:51.204+08:00  INFO 11904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-09-03T18:54:52.264+08:00  WARN 11904 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-03T18:54:52.264+08:00  WARN 11904 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-03T18:54:53.262+08:00  INFO 11904 --- [main] c.inrsystem.InrSystemApplicationTests    : Started InrSystemApplicationTests in 3.11 seconds (process running for 4.018)
+2023-09-03T18:59:14.046+08:00  INFO 33024 --- [main] c.inrsystem.InrSystemApplicationTests    : Starting InrSystemApplicationTests using Java 17.0.8 with PID 33024 (started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-03T18:59:14.049+08:00  INFO 33024 --- [main] c.inrsystem.InrSystemApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2023-09-03T18:59:14.796+08:00  INFO 33024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-03T18:59:14.799+08:00  INFO 33024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-03T18:59:14.824+08:00  INFO 33024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-09-03T18:59:15.864+08:00  WARN 33024 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-03T18:59:15.864+08:00  WARN 33024 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-03T18:59:16.652+08:00  INFO 33024 --- [main] c.inrsystem.InrSystemApplicationTests    : Started InrSystemApplicationTests in 2.885 seconds (process running for 3.732)

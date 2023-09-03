@@ -9,10 +9,7 @@ import com.inrsystem.mapper.EventMapper;
 import com.inrsystem.mapper.TeamMembersMapper;
 import com.inrsystem.mapper.Team_eventMapper;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -24,8 +21,9 @@ public class TenderController {
     private Team_eventMapper team_eventMapper;
     @Resource
     private EventMapper eventMapper;
-    @PostMapping("/tender")
-    public void tender(@RequestAttribute("info") Map<String,Object> info, @RequestBody Map<String,Object> map){
+    @PostMapping("/tender/{event_id}")
+    public void tender(@RequestAttribute("info") Map<String,Object> info,@PathVariable("event_id")Integer eventId
+                       , @RequestBody Map<String,Object> map){
        //通过token信息获取个人信息->team_id
         TeamMembers teamMembers = teamMembersMapper.selectByMap(info).get(0);
         if(teamMembers.getTeamId()==null){
@@ -34,10 +32,9 @@ public class TenderController {
         else {
             Team_event team_event = new Team_event();
             Integer teamId = teamMembers.getTeamId();
-            Integer event_id = Integer.parseInt(map.get("event_id").toString()) ;
-            Event event = eventMapper.selectById(event_id);
+            Event event = eventMapper.selectById(eventId);
             Integer bid = Integer.parseInt(map.get("bid").toString());
-            team_event.setEventId(event_id);
+            team_event.setEventId(eventId);
             team_event.setTeamId(teamId);
             //有一种交易方式没有bid->2
             if(event.getType()!=2)

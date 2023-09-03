@@ -9,6 +9,29 @@ spring:
       host: 47.113.218.236
       port: 6379
       password: jhy123
+  mail:
+    username: 15358755057@163.com
+    password: BHCYEUFXXRHASIGZ
+    host: smtp.163.com
+    port: 465
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+  rabbitmq:
+    host: 47.113.218.236
+    port: 5672
+    username: admin
+    password: jhy123
 
 logging:
   level:
@@ -22,8 +45,8 @@ logging:
       max-file-size: 10MB
       max-history: 5
 server:
-  port: 6667
-  host: 127.0.0.1
+  port: 9000
+  host: 47.113.218.236
 jwt:
   secret: riySrVRd9jKxqfixduh8  #jwt密钥
   expiration: 2592000 #过期时间（3天）

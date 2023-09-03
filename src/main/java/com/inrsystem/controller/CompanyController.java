@@ -1,10 +1,7 @@
 package com.inrsystem.controller;
 
 import com.inrsystem.annotation.Authorized;
-import com.inrsystem.dao.Achievement;
-import com.inrsystem.dao.Company;
-import com.inrsystem.dao.Event;
-import com.inrsystem.dao.Team;
+import com.inrsystem.dao.*;
 import com.inrsystem.enums.ErrorEnum;
 import com.inrsystem.exception.LocalRunTimeException;
 import com.inrsystem.mapper.*;
@@ -14,10 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.jdbc.Null;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static java.lang.Double.POSITIVE_INFINITY;
 
@@ -32,6 +26,9 @@ public class CompanyController {
    private CompanyService companyService;
    @Resource
    private EventMapper eventMapper;
+
+   @Resource
+   private TeamMembersMapper teamMembersMapper;
    @Resource
    private AchievementMapper achievementMapper;
    @Resource
@@ -54,28 +51,24 @@ public class CompanyController {
         event.setName(map.get("event_name").toString());
         event.setDescription(map.get("description").toString());
         //预算
-        if(map.get("price").toString()!=null){
+        if(String.valueOf(map.get("key"))!=null){
         event.setBudget(Double.parseDouble(map.get("price").toString()));}
         //固定价格
-        if(map.get("reservePrice").toString()!=null){
+        if(String.valueOf(map.get("key"))!=null){
             event.setReservePrice(Double.parseDouble(map.get("reservePrice").toString()));
         }
-        if(map.get("price").toString()!=null&&map.get("reservePrice").toString()==null){
-            event.setType(0);
-        }
-        if(map.get("price").toString()==null&&map.get("reservePrice").toString()==null){
-            event.setType(1);
-        }
-        if(map.get("price").toString()==null&&map.get("reservePrice").toString()!=null){
-            event.setType(2);
-        }
+        int type = Integer.parseInt(map.get("type").toString());
+        event.setType(type);
+
+        event.setStartTime(new Date(System.currentTimeMillis()));
         event.setRemark(0);
         event.setState(0);
         eventMapper.insert(event);
     }
 //获取科研团队成员的科研成果
-  @GetMapping("/getTeamAchievements")
-    public Map<String,Object> getTeamAchievement(@RequestAttribute("info") Map<String, Object> info,@RequestParam("team_id")Integer teamId){
+  @GetMapping("/getTeamAchievements/{team_id}")
+    public Map<String,Object> getTeamAchievement(@RequestAttribute("info") Map<String, Object> info,
+                                                 @PathVariable("team_id")Integer teamId){
       Achievement achievement = achievementMapper.getAchievementByTeamId(teamId);
       Map<String,Object> map =new HashMap<>();
       map.put("id",achievement.getId());
@@ -101,9 +94,19 @@ public class CompanyController {
               Map<String,Object> map=new HashMap<>();
               map.put("company_id",company.getId());
               map.put("event_id",event.getId());
-              map.put("event_name",event.getDescription());
+              map.put("event_name",event.getName());
+              map.put("description",event.getDescription());
               map.put("remark",event.getRemark());
-              map.put("price",event.getBudget());
+              if(event.getBudget()!=null){
+              map.put("price",event.getBudget());}
+              else {
+                  map.put("price",null);
+              }
+              if(event.getReservePrice() != null){
+                  map.put("reservePrice",event.getReservePrice());}
+              else {
+                  map.put("reservePrice",null);
+              }
               map.put("state",event.getState());
               if(event.getState()==2&&team_eventMapper.getState(team_eventMapper.getTeamID(event.getId()))==1){
                   map.put("team_id",team_eventMapper.getTeamID(event.getId()));
@@ -135,6 +138,30 @@ public class CompanyController {
         }
         return list;
     }
+//获取中标的团队的信息
+    @GetMapping("/getTeamDetails/{team_id}")
+    public Map<String,Object> getTeamDetails(@PathVariable Integer team_id,
+                                             @RequestAttribute("info")Map<String,Object> info){
+        Map<String,Object> returnMap =new HashMap<>();
+        List<TeamMembers> sameTeamMembers = teamMembersMapper.getSameTeamMembers(team_id);
+        List<Map<String,Object>>  members=new ArrayList<>();
+        for (TeamMembers t:sameTeamMembers) {
+            Map<String,Object> map1=new HashMap<>();
+            map1.put("name",t.getName());
+            map1.put("role",t.getTeamRole());
+            members.add(map1);
+        }
 
+        Team team = teamMapper.selectById(team_id);
+        Map<String, Object> achievementMap = new HashMap<>();
+        achievementMap.put("team_id",team.getId());
+        List<Achievement> achievements = achievementMapper.selectByMap(achievementMap);
+        if (achievements.isEmpty()){
+            throw new LocalRunTimeException(ErrorEnum.ERROR_GET_ACHIEVEMENT_INFORMATION);
+        }
 
+        returnMap.put("members",members);
+        returnMap.put("achievements",achievements);
+        return returnMap;
+    }
 }

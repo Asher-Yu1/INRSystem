@@ -18,7 +18,7 @@ public class Event {
     private Double budget;
     //价格
     @TableField("reservePrice")
-    private double reservePrice;
+    private Double reservePrice;
     private Integer remark;
     private Integer state;
     @TableField("start_time")
