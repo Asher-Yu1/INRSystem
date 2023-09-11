@@ -10,10 +10,7 @@ import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @RestController
@@ -32,6 +29,8 @@ public class TeamMemberController {
     private EventMapper eventMapper;
     @Resource
     private Team_eventMapper team_eventMapper;
+    @Resource
+    private CompanyMapper companyMapper;
 
     @GetMapping("/test")
     public Map<String, Object> getInfo(@RequestAttribute("info") Map<String, Object> info) {
@@ -155,34 +154,58 @@ public class TeamMemberController {
     //
     @Authorized(TeamRole = 1)
     @PostMapping("/postAchievement")
-    public void postAchievement(@RequestAttribute("info") Map<String,Object> info, @RequestBody ArrayList<Map<String,Object>> mapArrayList){
+    public boolean postAchievement(@RequestAttribute("info") Map<String,Object> info, @RequestBody Map<String,Object> map){
         Integer teamId = teamMembersMapper.selectByMap(info).get(0).getTeamId();
-        for (Map<String,Object> map:mapArrayList) {
-            Achievement achievement=new Achievement();
-            String title = map.get("title").toString();
-            String description = map.get("description").toString();
-            Integer type=Integer.parseInt(map.get("type").toString());
-            achievement.setTeamId(teamId);
-            achievement.setTitle(title);
-            achievement.setType(type);
-            achievement.setDescription(description);
-            achievement.setRemark(0);
-            if(map.get("file").toString()!=null){
-                achievement.setFile(map.get("file").toString());
-            }
-            int insert = achievementMapper.insert(achievement);
-            if(insert==0){
-                throw new LocalRunTimeException(ErrorEnum.ERROR_ADD_ACHIEVEMENT);
-            }
+        Achievement achievement=new Achievement();
+        String title = map.get("title").toString();
+        String description = map.get("description").toString();
+        Integer type=Integer.parseInt(map.get("type").toString());
+        achievement.setTeamId(teamId);
+        achievement.setTitle(title);
+        achievement.setType(type);
+        achievement.setDescription(description);
+        achievement.setRemark(0);
+        if(map.get("file").toString()!=null){
+            achievement.setFile(map.get("file").toString());
         }
+        int insert = achievementMapper.insert(achievement);
+        if(insert==0){
+            throw new LocalRunTimeException(ErrorEnum.ERROR_ADD_ACHIEVEMENT);
+        }
+        return (insert!=0)?true:false;
+
     }
 
     @GetMapping("/getEvent")
-    public List<Event> getAllEvent(){
-        List<Event> list=new ArrayList<>();
-        for (Event event:eventMapper.getAllEvents()) {
-            if (event.getState()==0){
-                list.add(event);
+    public List<Map<String,Object>> getAllEvent(@RequestParam Map<String,Object> map1){
+        Integer time = Integer.parseInt(map1.get("time").toString());
+        map1.remove("time");
+        List<Event> list1 = eventMapper.selectByMap(map1);
+        List<Map<String,Object>> list=new ArrayList<>();
+        for (Event event:list1) {
+//            Map<String,Object>  map =new HashMap<>();
+//            Company company = companyMapper.selectById(event.getCompanyId());
+//            if (event.getState()==0){
+//               map.put("company_id", event.getCompanyId());
+//               map.put("event_id", event.getId());
+//               map.put("event_name", event.getName());
+//               map.put("description", event.getDescription());
+//               map.put("state", event.getState());
+//               map.put("type", event.getType());
+//               map.put("budget",event.getBudget());
+//               map.put("reservePrice",event.getReservePrice());
+//               map.put("start_time",event.getStartTime());
+//               map.put("end_time",event.getEndTime());
+//               map.put("company_name",company.getName());
+//              list.add(map);
+//            }
+            if(time==1){
+                for (Event e:list1) {
+                    Date d =new Date(System.currentTimeMillis());
+                    if(d.after(e.getEndTime())){
+                        list1.remove(e);
+                    }
+                }
             }
         }
         return list;

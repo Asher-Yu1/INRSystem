@@ -53,23 +53,26 @@ public class AdminstratorController {
     }
     //审核公司任务
     @PostMapping("auditEvents/{id}")
-    public void auditEvents(@RequestAttribute("info") Map<String, Object> info,@PathVariable("id")Integer eventId,
+    public Boolean auditEvents(@RequestAttribute("info") Map<String, Object> info,@PathVariable("id")Integer eventId,
                             @RequestBody()Map<String,Object> map){
+        Boolean a=false;
         Integer remark = (Integer) map.get("remark");
-        Boolean aBoolean = eventMapper.updateEventState(remark, eventId);
-        if (aBoolean==false){
+        Integer number = eventMapper.updateEventState(remark, eventId);
+        if (number==0){
             throw new LocalRunTimeException(ErrorEnum.ERROR_REMARK);
         }
+        return (number!=0)?true:false;
     }
    //审核成果
     @PostMapping("/auditAchievement")
-    public void auditAchievement(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
+    public Boolean auditAchievement(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
         int remark = Integer.parseInt(map.get("remark").toString());
         Integer achievement_id = Integer.parseInt(map.get("achievement_id").toString());
-        Boolean aBoolean = achievementMapper.updateAchievementRemark(remark, achievement_id);
-        if (aBoolean==false){
+        Integer number = achievementMapper.updateAchievementRemark(remark, achievement_id);
+        if (number==0){
             throw new LocalRunTimeException(ErrorEnum.ERROR_REMARK);
         }
+        return (number!=0)?true:false;
     }
 
     @GetMapping("/getAchievementInformation")

@@ -25,9 +25,9 @@ public class RegisterController {
     private CompanyMapper companyMapper;
     @Resource
     private AdministratorsMapper administratorsMapper;
-
+//注册
     @PostMapping("/register")
-    public void Register(@RequestBody Map<String,Object> map){
+    public Boolean Register(@RequestBody Map<String,Object> map){
         String account = map.get("account").toString();
         String password = map.get("password").toString();
         int role = Integer.parseInt(map.get("role").toString());
@@ -45,6 +45,7 @@ public class RegisterController {
             if(insert==0){
                 throw new LocalRunTimeException(ErrorEnum.ERROR_INSERT);
             }
+            return (insert!=0)?true:false;
         }
         //公司
         if(role==1){
@@ -58,6 +59,7 @@ public class RegisterController {
             if(insert==0){
                 throw new LocalRunTimeException(ErrorEnum.ERROR_INSERT);
             }
+            return (insert!=0)?true:false;
         }
         //科研人员
         if(role==2){
@@ -71,6 +73,8 @@ public class RegisterController {
             if(insert==0){
                 throw new LocalRunTimeException(ErrorEnum.ERROR_INSERT);
             }
+            return (insert!=0)?true:false;
         }
+        return null;
     }
 }

@@ -17,7 +17,7 @@ import java.util.List;
 @Mapper
 public interface EventMapper extends BaseMapper<Event> {
     @Update("UPDATE event SET remark=#{remark} WHERE remark=0 AND id=#{event_id}")
-    Boolean updateEventState(@Param("remark")Integer remark, @Param("event_id") Integer eventID);
+    Integer updateEventState(@Param("remark")Integer remark, @Param("event_id") Integer eventID);
     @Select("SELECT * FROM `event` WHERE remark=0")
     List<Event> getEvents();
     @Select("SELECT * FROM `event` WHERE company_id=#{id} AND remark=2")

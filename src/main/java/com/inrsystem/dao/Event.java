@@ -2,6 +2,7 @@ package com.inrsystem.dao;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.util.Date;
@@ -21,8 +22,10 @@ public class Event {
     private Double reservePrice;
     private Integer remark;
     private Integer state;
+    @JsonFormat(pattern = "yyyy-mm-dd hh-mm-ss")
     @TableField("start_time")
     private Date startTime;
+    @JsonFormat(pattern = "yyyy-mm-dd hh-mm-ss")
     @TableField("end_time")
     private Date endTime;
     private Integer type;
