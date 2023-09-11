@@ -40,6 +40,7 @@ public class textualSimilarityController {
     public List<Team_event> getAllowedTeam(@RequestBody Map<String,Object> map ) throws MessagingException {
         Integer eventId = Integer.parseInt(map.get("event_id").toString());
         Event event = eventMapper.selectById(eventId);
+        if(new Date(System.currentTimeMillis()).equals(event.getEndTime())){
         //根据任务id获取竞标团队
         List<Team_event> team_events=team_eventMapper.getAllByEventId(eventId);
         team_events.forEach(team_event -> team_event.setAchievementScore(getScore(event, team_event.getTeamId())));
@@ -55,8 +56,8 @@ public class textualSimilarityController {
             throw new LocalRunTimeException(ErrorEnum.COMMON_ERROR);
         }
         sendMail(emails);
-        eventMapper.setEndTime(new Date(System.currentTimeMillis()),eventId);
-        return team_events1;
+        return team_events1;}
+        throw new LocalRunTimeException(ErrorEnum.NOT_END);
     }
 
 

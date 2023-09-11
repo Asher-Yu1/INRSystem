@@ -19,7 +19,7 @@ public enum ErrorEnum {
     REDIS_NOT_EXIST(9002, "登录过期"),
     OBJECT_TO_MAP_ERROR(10001, "自定义类转化为map出错"),
     NOT_EXIST(10002,"该用户不存在"),
-    EVENT_NOT_FIND(10003,"为查询到任何项目详细内容"),
+    EVENT_NOT_FIND(10003,"未查询到任何项目详细内容"),
     ERROR_REMARK(10004,"未打分成功"),
     ERROR_GET_ACHIEVEMENT_INFORMATION(10005,"获取科研成果失败"),
     ERROR_INSERT(10006,"insert失败"),
@@ -31,7 +31,8 @@ public enum ErrorEnum {
     NOT_REMARK_THIS_EVENT(20003,"尚未审核"),
    MULTIPLY_NAME(40003,"该队名已存在"),
    MULTIPLY_ENTER(40004,"该成员已加入其他科研团队"),
-   NOT_SIGN(40005,"账号密码不存在");
+   NOT_SIGN(40005,"账号密码不存在"),
+   NOT_END(40006,"尚未结束投标进程");
 
 
     private final Integer errCode;

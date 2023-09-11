@@ -22,10 +22,11 @@ public class TenderController {
     @Resource
     private EventMapper eventMapper;
     @PostMapping("/tender/{event_id}")
-    public void tender(@RequestAttribute("info") Map<String,Object> info,@PathVariable("event_id")Integer eventId
+    public Boolean tender(@RequestAttribute("info") Map<String,Object> info,@PathVariable("event_id")Integer eventId
                        , @RequestBody Map<String,Object> map){
        //通过token信息获取个人信息->team_id
         TeamMembers teamMembers = teamMembersMapper.selectByMap(info).get(0);
+        int insert=0;
         if(teamMembers.getTeamId()==null){
             throw new LocalRunTimeException(ErrorEnum.AUTHORITY_ERROR);
         }
@@ -40,12 +41,12 @@ public class TenderController {
             if(event.getType()!=2)
                 team_event.setBid(bid);
             team_event.setState(0);
-            int insert = team_eventMapper.insert(team_event);
+            insert = team_eventMapper.insert(team_event);
             if(insert==0){
                 throw new LocalRunTimeException(ErrorEnum.ERROR_INSERT);
             }
         }
-
+        return(insert!=0)?true:false;
     }
 
 }

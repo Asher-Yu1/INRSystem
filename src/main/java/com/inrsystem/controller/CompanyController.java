@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.jdbc.Null;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static java.lang.Double.POSITIVE_INFINITY;
@@ -43,7 +44,7 @@ public class CompanyController {
         return map;
     }
     @PostMapping("/postEvents")
-    public void postEvents(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
+    public Boolean postEvents(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
         String account = info.get("account").toString();
         Company company = companyService.getCompany(account);
         Event event =new Event();
@@ -51,19 +52,21 @@ public class CompanyController {
         event.setName(map.get("event_name").toString());
         event.setDescription(map.get("description").toString());
         //预算
-        if(String.valueOf(map.get("key"))!=null){
+        if(String.valueOf(map.get("price"))!=null){
         event.setBudget(Double.parseDouble(map.get("price").toString()));}
         //固定价格
-        if(String.valueOf(map.get("key"))!=null){
+        if(String.valueOf(map.get("reservePrice"))!=null){
             event.setReservePrice(Double.parseDouble(map.get("reservePrice").toString()));
         }
         int type = Integer.parseInt(map.get("type").toString());
         event.setType(type);
-
-        event.setStartTime(new Date(System.currentTimeMillis()));
+        Date date = new Date(System.currentTimeMillis());
+        event.setStartTime(date);
+        event.setEndTime(new Date(date.toString()+map.get("time")));
         event.setRemark(0);
         event.setState(0);
-        eventMapper.insert(event);
+        int insert = eventMapper.insert(event);
+       return (insert!=0)?true:false;
     }
 //获取科研团队成员的科研成果
   @GetMapping("/getTeamAchievements/{team_id}")
@@ -83,37 +86,49 @@ public class CompanyController {
 
 //获取已发布任务列表
       @GetMapping("/getEventDetails")
-    public List<Map<String,Object>> getEventDetails(@RequestAttribute("info") Map<String, Object> info){
+    public List<Event> getEventDetails(@RequestAttribute("info") Map<String, Object> info,@RequestParam()Map<String,Object> map1){
          Company company = companyMapper.selectByMap(info).get(0);
-          List<Event> eventsByCompanyId = eventMapper.getEventsByCompanyId(company.getId());
-          List<Map<String,Object>> list =new ArrayList<>();
-          for (Event event:eventsByCompanyId) {
-              if(event.getRemark()==0){
-                  throw  new LocalRunTimeException(ErrorEnum.NOT_REMARK_THIS_EVENT);
+         map1.put("company_id",company.getId());
+          Integer time =Integer.parseInt(map1.get("time").toString()) ;
+          map1.remove("time");
+          List<Event> eventsByCompanyId = eventMapper.selectByMap(map1);
+          if(time==1){
+              for (Event e:eventsByCompanyId) {
+                  Date d =new Date(System.currentTimeMillis());
+                  if(d.after(e.getEndTime())){
+                      eventsByCompanyId.remove(e);
+                  }
               }
-              Map<String,Object> map=new HashMap<>();
-              map.put("company_id",company.getId());
-              map.put("event_id",event.getId());
-              map.put("event_name",event.getName());
-              map.put("description",event.getDescription());
-              map.put("remark",event.getRemark());
-              if(event.getBudget()!=null){
-              map.put("price",event.getBudget());}
-              else {
-                  map.put("price",null);
-              }
-              if(event.getReservePrice() != null){
-                  map.put("reservePrice",event.getReservePrice());}
-              else {
-                  map.put("reservePrice",null);
-              }
-              map.put("state",event.getState());
-              if(event.getState()==2&&team_eventMapper.getState(team_eventMapper.getTeamID(event.getId()))==1){
-                  map.put("team_id",team_eventMapper.getTeamID(event.getId()));
-              }
-             list.add(map);
           }
-          return list;
+//          List<Map<String,Object>> list =new ArrayList<>();
+//          for (Event event:eventsByCompanyId) {
+//              if(event.getRemark()==0){
+//                  throw  new LocalRunTimeException(ErrorEnum.NOT_REMARK_THIS_EVENT);
+//              }
+//              Map<String,Object> map=new HashMap<>();
+//              map.put("company_id",company.getId());
+//              map.put("event_id",event.getId());
+//              map.put("event_name",event.getName());
+//              map.put("description",event.getDescription());
+//              map.put("remark",event.getRemark());
+//              if(event.getBudget()!=null){
+//              map.put("price",event.getBudget());}
+//              else {
+//                  map.put("price",null);
+//              }
+//              if(event.getReservePrice() != null){
+//                  map.put("reservePrice",event.getReservePrice());}
+//              else {
+//                  map.put("reservePrice",null);
+//              }
+//              map.put("state",event.getState());
+//              if(event.getState()==2&&team_eventMapper.getState(team_eventMapper.getTeamID(event.getId()))==1){
+//                  map.put("team_id",team_eventMapper.getTeamID(event.getId()));
+//              }
+//             list.add(map);
+//          }
+         // return list;
+          return eventsByCompanyId;
     }
     //获取中标团队的信息
     @GetMapping("/getTeamInformation")
@@ -163,5 +178,14 @@ public class CompanyController {
         returnMap.put("members",members);
         returnMap.put("achievements",achievements);
         return returnMap;
+    }
+
+    @GetMapping("/getDetails")
+    public Map<String,Object> getDetails(@RequestAttribute("info")Map<String,Object> info){
+        Company company = companyMapper.selectByMap(info).get(0);
+        Map<String,Object> map=new HashMap<>();
+        map.put("id",company.getId());
+        map.put("name",company.getName());
+        return map;
     }
 }
