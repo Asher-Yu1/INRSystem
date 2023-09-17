@@ -204,9 +204,15 @@ public class TeamMemberController {
                     Date d =new Date(System.currentTimeMillis());
                     if(d.after(e.getEndTime())){
                         list1.remove(e);
+                        continue;
                     }
+                    Map<String,Object> map=new HashMap<>();
+                    map.put("event",e);
+                   map.put("company_name",companyMapper.selectById(e.getCompanyId()).getName());
+                   list.add(map);
                 }
             }
+
         }
         return list;
     }

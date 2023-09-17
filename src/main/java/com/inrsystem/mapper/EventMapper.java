@@ -28,4 +28,7 @@ public interface EventMapper extends BaseMapper<Event> {
     @Update("UPDATE event SET end_time=#{end_time} WHERE id=#{event_id}")
     Integer setEndTime(@Param("end_time") Date time,@Param("event_id")Integer eventId);
 
+    @Select("SELECT * FROM `event` WHERE end_time<=#{date} AND state!=2")
+    List<Event> getAllEndedEvents(Date date);
+
 }
