@@ -6,6 +6,7 @@ import com.inrsystem.dao.Event;
 import com.inrsystem.enums.ErrorEnum;
 import com.inrsystem.exception.LocalRunTimeException;
 import com.inrsystem.mapper.AchievementMapper;
+import com.inrsystem.mapper.CompanyMapper;
 import com.inrsystem.mapper.EventMapper;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,8 @@ public class AdminstratorController {
     private EventMapper eventMapper;
     @Resource
     private AchievementMapper achievementMapper;
+    @Resource
+    private CompanyMapper companyMapper;
     @GetMapping("/test")
     public Map<String, Object> getInfo(@RequestAttribute("info") Map<String, Object> info) {
         Map<String, Object> map = new HashMap<>();
@@ -41,6 +44,7 @@ public class AdminstratorController {
         for (Event e:events) {
             Map<String,Object> map =new HashMap<>();
             map.put("company_id",e.getCompanyId());
+            map.put("company_name",companyMapper.selectById(e.getCompanyId()).getName());
             map.put("event_id",e.getId());
             map.put("event_name",e.getName());
             map.put("description",e.getDescription());

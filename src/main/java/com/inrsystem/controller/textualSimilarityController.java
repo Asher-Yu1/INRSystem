@@ -16,6 +16,7 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,30 +36,36 @@ public class textualSimilarityController {
    private TeamMembersMapper teamMembersMapper;
     @Resource
     private JavaMailSender javaMailSender;
-    //获取匹配到的team_id
-    @PostMapping ("/analyse")
-    public List<Team_event> getAllowedTeam(@RequestBody Map<String,Object> map ) throws MessagingException {
-        Integer eventId = Integer.parseInt(map.get("event_id").toString());
-        Event event = eventMapper.selectById(eventId);
-        if(new Date(System.currentTimeMillis()).equals(event.getEndTime())){
-        //根据任务id获取竞标团队
-        List<Team_event> team_events=team_eventMapper.getAllByEventId(eventId);
-        team_events.forEach(team_event -> team_event.setAchievementScore(getScore(event, team_event.getTeamId())));
-        List<Team_event> team_events1 = auctionByTaskType(event, team_events);
-        team_eventMapper.winingTeam(team_events1.get(0).getSalary(),team_events1.get(0).getTeamId(),
-                                    team_events1.get(0).getEventId(),team_events1.get(0).getBid());
-        List<String> emails=new ArrayList<>();
-        List<TeamMembers> sameTeamMembers = teamMembersMapper.getSameTeamMembers(team_events1.get(0).getEventId());
-        for (TeamMembers t:sameTeamMembers) {
-            emails.add(t.getEmail());
-        }
-        if(emails.isEmpty()){
-            throw new LocalRunTimeException(ErrorEnum.COMMON_ERROR);
-        }
-        sendMail(emails);
-        return team_events1;}
-        throw new LocalRunTimeException(ErrorEnum.NOT_END);
-    }
+    //获取匹配到的team_id 每二十分钟运行一次
+   @Scheduled(cron = "0 20 * * * ?")
+    public List<Team_event> getAllowedTeam() throws MessagingException {
+       //获取数据库中尚未中标，且时间超过当前时间
+       List<Event> allEndedEvents = eventMapper.getAllEndedEvents(new Date(System.currentTimeMillis()));
+       for (Event e:allEndedEvents) {
+           Integer eventId = e.getId();
+           Event event = eventMapper.selectById(eventId);
+           if(new Date(System.currentTimeMillis()).equals(event.getEndTime())){
+               //根据任务id获取竞标团队
+               List<Team_event> team_events=team_eventMapper.getAllByEventId(eventId);
+               team_events.forEach(team_event -> team_event.setAchievementScore(getScore(event, team_event.getTeamId())));
+               List<Team_event> team_events1 = auctionByTaskType(event, team_events);
+               team_eventMapper.winingTeam(team_events1.get(0).getSalary(),team_events1.get(0).getTeamId(),
+                       team_events1.get(0).getEventId(),team_events1.get(0).getBid());
+               //向团队成员发邮件
+               List<String> emails=new ArrayList<>();
+               List<TeamMembers> sameTeamMembers = teamMembersMapper.getSameTeamMembers(team_events1.get(0).getEventId());
+               for (TeamMembers t:sameTeamMembers) {
+                   emails.add(t.getEmail());
+               }
+               if(emails.isEmpty()){
+                   throw new LocalRunTimeException(ErrorEnum.COMMON_ERROR);
+               }
+               sendMail(emails);
+               return team_events1;}
+           throw new LocalRunTimeException(ErrorEnum.NOT_END);
+       }
+       return null;
+   }
 
 
     private List<Team_event> auctionByTaskType(Event event, List<Team_event> team_events){

@@ -145,6 +145,9 @@ public class CompanyController {
                 for (Integer teamId :allowedTeamId) {
                     Team team = teamMapper.selectById(teamId);
                     map.put("team_id",team.getId());
+                    Team_event byEventIdAndTeamId = team_eventMapper.getByEventIdAndTeamId(e.getId(), teamId);
+                    map.put("salary",byEventIdAndTeamId.getSalary());
+                    map.put("bid",byEventIdAndTeamId.getBid());
                     map.put("team_name",team.getName());
                     map.put("event_id",e.getId());
                     list.add(map);
