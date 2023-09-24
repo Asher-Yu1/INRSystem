@@ -7,6 +7,8 @@ import com.inrsystem.mapper.CompanyMapper;
 import com.inrsystem.mapper.EventMapper;
 import com.inrsystem.service.CompanyService;
 import com.inrsystem.service.EventService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EventServiceImpl  extends ServiceImpl<EventMapper, Event> implements EventService {
 }

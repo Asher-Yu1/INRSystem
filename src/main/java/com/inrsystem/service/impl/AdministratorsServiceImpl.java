@@ -8,7 +8,9 @@ import com.inrsystem.mapper.CompanyMapper;
 import com.inrsystem.service.AchievementService;
 import com.inrsystem.service.AdministratorsService;
 import com.inrsystem.service.CompanyService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AdministratorsServiceImpl extends ServiceImpl<AdministratorsMapper, Administrators> implements AdministratorsService {
 
 }

@@ -22,17 +22,20 @@ public interface Team_eventMapper extends BaseMapper<Team_event> {
     List<Integer> getAllTeamId(@Param("event_id") Integer eventId);
 
     @Select("SELECT * FROM `team_event` WHERE event_id=#{event_id} AND state=0")
-    List<Team_event> getAllByEventId(@Param("event_id") Integer eventId);
+    List<Team_event> getAllByEventId(@Param("event_id") Long eventId);
 @Update("UPDATE team_event SET salary=#{salary} ,state=1 WHERE team_id=#{team_id} AND event_id=#{event_id} AND bid=#{bid}")
-    Integer winingTeam (@Param("salary")double salary,@Param("team_id")Integer teamID,
-                        @Param("event_id")Integer eventId,@Param("bid")double bid);
+    Integer winingTeam (@Param("salary")double salary, @Param("team_id") Long teamID,
+                        @Param("event_id") Long eventId, @Param("bid")double bid);
 
-    @Select("SELECT * FROM `team_event` WHERE team_id=#{team_id} AND state=1")
-    List<Team_event> getStatedByTeamId(@Param("team_id") Integer teamId);
+    @Update("UPDATE team_event SET state=2 WHERE team_id=#{team_id} AND event_id=#{event_id} ")
+    Integer losingTeam ( @Param("team_id") Long teamID, @Param("event_id") Long eventId);
+
+    @Select("SELECT * FROM `team_event` WHERE team_id=#{team_id} AND state=#{state}")
+    List<Team_event> getStatedByTeamId(@Param("team_id") Long teamId,@Param("state")Integer state);
 
     @Select("SELECT team_id FROM team_event WHERE event_id=#{event_id} And state=1")
-    List<Integer> getAllowedTeamId(@Param("event_id") Integer eventId);
+    List<Integer> getAllowedTeamId(@Param("event_id") Long eventId);
 
     @Select("SELECT * FROM team_event WHERE event_id=#{event_id} And team_id=#{team_id}")
-    Team_event getByEventIdAndTeamId(@Param("event_id") Integer eventId,@Param("team_id")Integer teamId);
+    Team_event getByEventIdAndTeamId(@Param("event_id") Long eventId, @Param("team_id")Integer teamId);
 }

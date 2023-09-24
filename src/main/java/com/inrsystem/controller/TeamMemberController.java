@@ -48,14 +48,13 @@ public class TeamMemberController {
         Map<String, Object> achievementMap = new HashMap<>();
         map.put("account",account);
         TeamMembers teamMembers = teamMembersMapper.selectByMap(map).get(0);
-        Integer teamId = teamMembers.getTeamId();
+        Long teamId = teamMembers.getTeamId();
         map.put("team_id",teamId);
-
         map.put("name",teamMembers.getName());
         map.put("id",teamMembers.getId());
+        map.put("team_name",teamMapper.selectById(teamId).getName());
         Team team = teamMapper.selectById(teamId);
         achievementMap.put("team_id",team.getId());
-        achievementMap.put("team_name",team.getName());
         List<Achievement> achievements = achievementMapper.selectByMap(achievementMap);
         map.put("achievements",achievements);
         if (map.isEmpty()){
@@ -69,6 +68,7 @@ public class TeamMemberController {
         TeamMembers teamMembers = teamMembersMapper.selectByMap(info).get(0);
         return teamMembersMapper.getSameTeamMembers(teamMembers.getTeamId());
     }
+
    @PostMapping("/createTeam")
     public void creatTeam(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
     String teamName = map.get("teamName").toString();
@@ -96,7 +96,11 @@ public class TeamMemberController {
     }
     for (Map<String,Object> m:members) {
         String name = m.get("name").toString();
+        if (teamMembersMapper.getMembersByName(name).isEmpty()){
+            throw new LocalRunTimeException(ErrorEnum.NOT_EXIST);
+        }
         TeamMembers teamMembers = teamMembersMapper.getMembersByName(name).get(0);
+
         if(teamMembers.getTeamId()!=null){
             throw new LocalRunTimeException(ErrorEnum.MULTIPLY_ENTER);
         }
@@ -147,19 +151,21 @@ public class TeamMemberController {
             map.put("budget",event.getBudget());
         if (event.getState()==2){
             map.put("team_id",team_eventMapper.getTeamID(eventId));
+            map.put("team_name",teamMapper.selectById(team_eventMapper.getTeamID(eventId)).getName());
         }
         }
         return map;
     }
     //
-    @Authorized(TeamRole = 1)
+    @Authorized(TeamRole = {1})
     @PostMapping("/postAchievement")
     public boolean postAchievement(@RequestAttribute("info") Map<String,Object> info, @RequestBody Map<String,Object> map){
-        Integer teamId = teamMembersMapper.selectByMap(info).get(0).getTeamId();
+        Long teamId = teamMembersMapper.selectByMap(info).get(0).getTeamId();
         Achievement achievement=new Achievement();
         String title = map.get("title").toString();
         String description = map.get("description").toString();
         Integer type=Integer.parseInt(map.get("type").toString());
+        achievement.setId(null);
         achievement.setTeamId(teamId);
         achievement.setTitle(title);
         achievement.setType(type);
@@ -182,60 +188,45 @@ public class TeamMemberController {
         map1.remove("time");
         List<Event> list1 = eventMapper.selectByMap(map1);
         List<Map<String,Object>> list=new ArrayList<>();
-        for (Event event:list1) {
-//            Map<String,Object>  map =new HashMap<>();
-//            Company company = companyMapper.selectById(event.getCompanyId());
-//            if (event.getState()==0){
-//               map.put("company_id", event.getCompanyId());
-//               map.put("event_id", event.getId());
-//               map.put("event_name", event.getName());
-//               map.put("description", event.getDescription());
-//               map.put("state", event.getState());
-//               map.put("type", event.getType());
-//               map.put("budget",event.getBudget());
-//               map.put("reservePrice",event.getReservePrice());
-//               map.put("start_time",event.getStartTime());
-//               map.put("end_time",event.getEndTime());
-//               map.put("company_name",company.getName());
-//              list.add(map);
-//            }
+
             if(time==1){
                 for (Event e:list1) {
                     Date d =new Date(System.currentTimeMillis());
                     if(d.after(e.getEndTime())){
                         list1.remove(e);
-                        continue;
                     }
-                    Map<String,Object> map=new HashMap<>();
-                    map.put("event",e);
-                   map.put("company_name",companyMapper.selectById(e.getCompanyId()).getName());
-                   list.add(map);
                 }
             }
+            for (Event e:list1) {
+            Map<String,Object> map=new HashMap<>();
+                String end = e.getEndTime().toInstant().toString();
+                String s = e.getStartTime().toInstant().toString();
+                map.put("end",end);
+                map.put("start",s);
+                map.put("event",e);
+            map.put("company_name",companyMapper.selectById(e.getCompanyId()).getName());
+            list.add(map);}
 
-        }
         return list;
     }
 
     //获取中标的任务信息
-    @GetMapping("/getSuccessfullyEventInformation")
-    public List<Map<String,Object>> getSuccessEvent(@RequestAttribute("info") Map<String,Object> info){
+    @GetMapping("/getSuccessfullyEventInformation/{state}")
+    public List<Map<String,Object>> getSuccessEvent(@RequestAttribute("info") Map<String,Object> info,@PathVariable("state")Integer state){
      List<Map<String,Object>> list =new ArrayList<>();
-        List<Team_event> statedByTeamId = team_eventMapper.getStatedByTeamId(teamMembersMapper.selectByMap(info).get(0).getTeamId());
+
+        List<Team_event> statedByTeamId = team_eventMapper.getStatedByTeamId(teamMembersMapper.selectByMap(info).get(0).getTeamId(),state);
         for (Team_event t:statedByTeamId) {
           Map<String, Object> map = new HashMap<>();
             Event event = eventMapper.selectById(t.getEventId());
-            map.put("company_id",event.getCompanyId());
-            map.put("event_id",event.getId());
-            map.put("event_name",event.getName());
-            map.put("description",event.getDescription());
-            map.put("bid",t.getBid());
-            if(t.getSalary()!=0){
+            map.put("event",event);
+            if(state==1){
             map.put("salary",t.getSalary());}
-            map.put("start_time",event.getStartTime());
-            map.put("end_time",event.getEndTime());
+            map.put("bid",t.getBid());
+            map.put("company_name",companyMapper.selectById(event.getCompanyId()).getName());
             list.add(map);
         }
+
         return list;
     }
 

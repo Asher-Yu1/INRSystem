@@ -1,19 +1,26 @@
 package com.inrsystem.dao;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
 
-import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Achievement {
-    private Integer id;
+    @TableId(type = IdType.AUTO)
+    private Long id;
     private String title;
     private String description;
     private Integer type;
     @TableField("team_id")
-    private Integer teamId;
+    private Long teamId;
     private String file;
     private Integer remark;
 
