@@ -8,6 +8,7 @@ import com.inrsystem.exception.LocalRunTimeException;
 import com.inrsystem.mapper.AchievementMapper;
 import com.inrsystem.mapper.CompanyMapper;
 import com.inrsystem.mapper.EventMapper;
+import com.inrsystem.mapper.TeamMapper;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,8 @@ public class AdminstratorController {
     private AchievementMapper achievementMapper;
     @Resource
     private CompanyMapper companyMapper;
+    @Resource
+    private TeamMapper teamMapper;
     @GetMapping("/test")
     public Map<String, Object> getInfo(@RequestAttribute("info") Map<String, Object> info) {
         Map<String, Object> map = new HashMap<>();
@@ -34,10 +37,13 @@ public class AdminstratorController {
         map.put("id", info.get("id"));
         return map;
     }
-    @GetMapping("/getEventInformation")
-    public List<Map<String,Object>> getEventInformation(@RequestAttribute("info") Map<String, Object> info){
+    @GetMapping("/getEventInformation/{remark}")
+    public List<Map<String,Object>> getEventInformation(@RequestAttribute("info") Map<String, Object> info,
+                                                        @PathVariable("remark")Integer remark){
         List<Map<String, Object>> list = new ArrayList<>();
-        List<Event> events = eventMapper.getEvents();
+        Map<String,Object> selectMap =new HashMap<>();
+        selectMap.put("remark",remark);
+        List<Event> events = eventMapper.selectByMap(selectMap);
         if(events.isEmpty()){
             throw new LocalRunTimeException(ErrorEnum.EVENT_NOT_FIND);
         }
@@ -68,19 +74,29 @@ public class AdminstratorController {
         return (number!=0)?true:false;
     }
    //审核成果
-    @PostMapping("/auditAchievement")
-    public Boolean auditAchievement(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
+    @PostMapping("/auditAchievement/{id}")
+    public Boolean auditAchievement(@RequestAttribute("info") Map<String, Object> info,@PathVariable("id")Long achievementId,
+                                    @RequestBody()Map<String,Object> map){
         int remark = Integer.parseInt(map.get("remark").toString());
-        Integer achievement_id = Integer.parseInt(map.get("achievement_id").toString());
-        Integer number = achievementMapper.updateAchievementRemark(remark, achievement_id);
+        Integer number = achievementMapper.updateAchievementRemark(remark, achievementId);
         if (number==0){
             throw new LocalRunTimeException(ErrorEnum.ERROR_REMARK);
         }
         return (number!=0)?true:false;
     }
 
-    @GetMapping("/getAchievementInformation")
-    public Achievement getAchievement(@RequestAttribute("info") Map<String, Object> info,@RequestParam("team_id")Integer teamId){
-        return achievementMapper.selectById(teamId);
+    @GetMapping("/getAchievementInformation/{remark}")
+    public List<Map<String,Object>> getAchievement(@RequestAttribute("info") Map<String, Object> info,@PathVariable("remark")Integer remark){
+        List<Map<String,Object>> l =new ArrayList<>();
+        Map<String,Object> selectMap =new HashMap<>();
+        selectMap.put("remark",remark);
+        List<Achievement> achievements = achievementMapper.selectByMap(selectMap);
+        for (Achievement a:achievements) {
+            Map<String,Object> map =new HashMap<>();
+            map.put("achievement",a);
+            map.put("team_name",teamMapper.selectById(a.getTeamId()).getName());
+            l.add(map);
+        }
+        return l ;
     }
 }

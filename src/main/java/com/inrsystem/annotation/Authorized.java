@@ -10,5 +10,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Authorized {
     int[] roles() default {};
-    int[] TeamRole() default {0};
+    int[] TeamRole() default {};
 }

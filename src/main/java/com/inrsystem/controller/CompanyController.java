@@ -8,6 +8,7 @@ import com.inrsystem.mapper.*;
 import com.inrsystem.service.CompanyService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.jdbc.Null;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,19 +53,29 @@ public class CompanyController {
         event.setName(map.get("event_name").toString());
         event.setDescription(map.get("description").toString());
         //预算
-        if(String.valueOf(map.get("price"))!=null){
+        if(map.get("price")!=null){
         event.setBudget(Double.parseDouble(map.get("price").toString()));}
         //固定价格
-        if(String.valueOf(map.get("reservePrice"))!=null){
+        if(map.get("reservePrice")!=null){
             event.setReservePrice(Double.parseDouble(map.get("reservePrice").toString()));
         }
         int type = Integer.parseInt(map.get("type").toString());
         event.setType(type);
         Date date = new Date(System.currentTimeMillis());
-        event.setStartTime(date);
-        event.setEndTime(new Date(date.toString()+map.get("time")));
+        event.setStartTime(new java.sql.Date(date.getTime()));
+        // 获取当前时间
+        Date date1 = new Date();
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(date1);
+        // 把日期往后增加一天,整数  往后推,负数往前移动
+        calendar.add(Calendar.DATE, 1*Integer.parseInt(map.get("time").toString()));
+        // 这个时间就是日期往后推一天的结果
+        date1 = calendar.getTime();
+
+        event.setEndTime( new java.sql.Date(date1.getTime()));
         event.setRemark(0);
         event.setState(0);
+
         int insert = eventMapper.insert(event);
        return (insert!=0)?true:false;
     }
@@ -86,7 +97,8 @@ public class CompanyController {
 
 //获取已发布任务列表
       @GetMapping("/getEventDetails")
-    public List<Event> getEventDetails(@RequestAttribute("info") Map<String, Object> info,@RequestParam()Map<String,Object> map1){
+    public List<Map<String,Object>> getEventDetails(@RequestAttribute("info") Map<String, Object> info,@RequestParam()Map<String,Object> map1){
+          List<Map<String,Object>> list=new ArrayList<>();
          Company company = companyMapper.selectByMap(info).get(0);
          map1.put("company_id",company.getId());
           Integer time =Integer.parseInt(map1.get("time").toString()) ;
@@ -94,41 +106,21 @@ public class CompanyController {
           List<Event> eventsByCompanyId = eventMapper.selectByMap(map1);
           if(time==1){
               for (Event e:eventsByCompanyId) {
-                  Date d =new Date(System.currentTimeMillis());
-                  if(d.after(e.getEndTime())){
+                  if(eventMapper.getTime().after(e.getEndTime())){
                       eventsByCompanyId.remove(e);
                   }
-              }
-          }
-//          List<Map<String,Object>> list =new ArrayList<>();
-//          for (Event event:eventsByCompanyId) {
-//              if(event.getRemark()==0){
-//                  throw  new LocalRunTimeException(ErrorEnum.NOT_REMARK_THIS_EVENT);
-//              }
-//              Map<String,Object> map=new HashMap<>();
-//              map.put("company_id",company.getId());
-//              map.put("event_id",event.getId());
-//              map.put("event_name",event.getName());
-//              map.put("description",event.getDescription());
-//              map.put("remark",event.getRemark());
-//              if(event.getBudget()!=null){
-//              map.put("price",event.getBudget());}
-//              else {
-//                  map.put("price",null);
-//              }
-//              if(event.getReservePrice() != null){
-//                  map.put("reservePrice",event.getReservePrice());}
-//              else {
-//                  map.put("reservePrice",null);
-//              }
-//              map.put("state",event.getState());
-//              if(event.getState()==2&&team_eventMapper.getState(team_eventMapper.getTeamID(event.getId()))==1){
-//                  map.put("team_id",team_eventMapper.getTeamID(event.getId()));
-//              }
-//             list.add(map);
-//          }
-         // return list;
-          return eventsByCompanyId;
+              }}
+          for (Event e:eventsByCompanyId) {
+              Map<String,Object> map=new HashMap<>();
+              String end = e.getEndTime().toInstant().toString();
+              String s = e.getStartTime().toInstant().toString();
+              map.put("end",end);
+              map.put("start",s);
+              map.put("event",e);
+              map.put("company_name",companyMapper.selectById(e.getCompanyId()).getName());
+              list.add(map);}
+
+          return list;
     }
     //获取中标团队的信息
     @GetMapping("/getTeamInformation")
@@ -150,6 +142,7 @@ public class CompanyController {
                     map.put("bid",byEventIdAndTeamId.getBid());
                     map.put("team_name",team.getName());
                     map.put("event_id",e.getId());
+                    map.put("event_name",e.getName());
                     list.add(map);
                 }
             }
@@ -158,7 +151,7 @@ public class CompanyController {
     }
 //获取中标的团队的信息
     @GetMapping("/getTeamDetails/{team_id}")
-    public Map<String,Object> getTeamDetails(@PathVariable Integer team_id,
+    public Map<String,Object> getTeamDetails(@PathVariable Long team_id,
                                              @RequestAttribute("info")Map<String,Object> info){
         Map<String,Object> returnMap =new HashMap<>();
         List<TeamMembers> sameTeamMembers = teamMembersMapper.getSameTeamMembers(team_id);
@@ -191,4 +184,7 @@ public class CompanyController {
         map.put("name",company.getName());
         return map;
     }
+
+
+
 }

@@ -21,8 +21,9 @@ public class TenderController {
     private Team_eventMapper team_eventMapper;
     @Resource
     private EventMapper eventMapper;
+    //投标
     @PostMapping("/tender/{event_id}")
-    public Boolean tender(@RequestAttribute("info") Map<String,Object> info,@PathVariable("event_id")Integer eventId
+    public Boolean tender(@RequestAttribute("info") Map<String,Object> info,@PathVariable("event_id") Long eventId
                        , @RequestBody Map<String,Object> map){
        //通过token信息获取个人信息->team_id
         TeamMembers teamMembers = teamMembersMapper.selectByMap(info).get(0);
@@ -31,8 +32,10 @@ public class TenderController {
             throw new LocalRunTimeException(ErrorEnum.AUTHORITY_ERROR);
         }
         else {
+            eventMapper.setState(1,eventId);
+            //插入team_event表
             Team_event team_event = new Team_event();
-            Integer teamId = teamMembers.getTeamId();
+            Long teamId = teamMembers.getTeamId();
             Event event = eventMapper.selectById(eventId);
             Integer bid = Integer.parseInt(map.get("bid").toString());
             team_event.setEventId(eventId);

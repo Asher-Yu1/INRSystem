@@ -16,7 +16,7 @@ public interface TeamMembersMapper extends BaseMapper<TeamMembers> {
     Boolean creatTeam(@Param("team_id")Integer teamId,@Param("teamRole") Integer teamRole,@Param("name")String name);
 
     @Select("SELECT * FROM research_teamMembers WHERE team_id=#{team_id}")
-    List<TeamMembers> getSameTeamMembers(@Param("team_id")Integer teamId);
+    List<TeamMembers> getSameTeamMembers(@Param("team_id")Long teamId);
 
     @Select("SELECT * FROM research_teamMembers WHERE name=#{name}")
     List<TeamMembers> getMembersByName(@Param("name")String name);

@@ -46,18 +46,18 @@ public class TokenInterceptor implements HandlerInterceptor {
             int[] teamRoles = authorizedAnnotation.TeamRole();
             // 验证角色是否满足权限要求
             int[] allowedRoles = authorizedAnnotation.roles();
-            if(role==2){
+            if(role==2&&teamRoles.length!=0){
                 for (Integer allowedRole : allowedRoles) {
                     for (Integer allowedTeamRole:teamRoles) {
-                       String account = info.get("account").toString();
-                       Map<String,Object> map =new HashMap<>();
-                       map.put("account",account);
-                       Integer teamRole = teamMembersMapper.selectByMap(map).get(0).getTeamRole();
-                       if (allowedRole.equals(role)&&allowedTeamRole.equals(teamRole)) {
-                        // 角色匹配，允许访问
-                        return true;
+                        String account = info.get("account").toString();
+                        Map<String,Object> map =new HashMap<>();
+                        map.put("account",account);
+                        Integer teamRole = teamMembersMapper.selectByMap(map).get(0).getTeamRole();
+                        if (allowedRole.equals(role)&&allowedTeamRole.equals(teamRole)) {
+                            // 角色匹配，允许访问
+                            return true;
+                        }
                     }
-                }
                 }}
             else {
                 for (Integer allowedRole : allowedRoles) {
