@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @TableName("research_teamMembers")
-public class TeamMembers{
+public class TeamMembers extends AbstractParticipant{
 
   @TableId(type = IdType.AUTO)
   private Long id;
@@ -30,8 +30,14 @@ public class TeamMembers{
   @TableField("team_id")
   private Long teamId;
   private Integer role;
-  @TableField("team_role")
-  private Integer teamRole;
 
+  @Override
+  public boolean hasAbility(Class<? extends Condition> aClass) {
+    return false;
+  }
 
+  @Override
+  public Condition getAbility(Class<? extends Condition> aClass) {
+    return null;
+  }
 }

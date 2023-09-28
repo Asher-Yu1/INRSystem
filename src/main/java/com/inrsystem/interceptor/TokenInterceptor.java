@@ -26,49 +26,41 @@ public class TokenInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        String headToken = request.getHeader("token"); // 获取头中token
-        if (!StringUtils.isEmpty(headToken)) {// 验证是否为空
-            jwtUtil.verifyToken(headToken);
-            Map<String, Object> info = jwtUtil.getInfoFromToken(headToken); // 调用jwt解密方法解密
+        // 获取头中token
+        String headToken = request.getHeader("token");
 
-            request.setAttribute("info", info); // 把jwt解密后的信息放入request域中
+        // 验证token是否为空
+        if (StringUtils.isEmpty(headToken)) {
+            throw new LocalRunTimeException(ErrorEnum.EMPTY_TOKEN);
+        }
 
-            // 解析JWT token并获取角色信息
-            Integer role = Integer.parseInt(info.get("role").toString());
-            // 获取当前请求对应的Controller类上的Authorized注解
-            Class<?> controllerClass = ((HandlerMethod) handler).getBeanType();
-            Authorized authorizedAnnotation = controllerClass.getAnnotation(Authorized.class);
+        // 调用jwt解密方法解密
+        jwtUtil.verifyToken(headToken);
+        Map<String, Object> info = jwtUtil.getInfoFromToken(headToken);
 
-            if (authorizedAnnotation == null) {
-                // 没有Authorized注解，无需权限验证，直接放行
+        // 把jwt解密后的信息放入request域中
+        request.setAttribute("info", info);
+
+        // 解析JWT token并获取角色信息
+        Integer role = Integer.parseInt(info.get("role").toString());
+
+        // 获取当前请求对应的Controller类上的Authorized注解
+        Class<?> controllerClass = ((HandlerMethod) handler).getBeanType();
+        Authorized authorizedAnnotation = controllerClass.getAnnotation(Authorized.class);
+
+        if (authorizedAnnotation == null) {
+            // 没有Authorized注解，无需权限验证，直接放行
+            return true;
+        }
+
+        // 验证角色是否满足权限要求
+        int[] allowedRoles = authorizedAnnotation.roles();
+        for (Integer allowedRole : allowedRoles) {
+            if (allowedRole.equals(role)) {
+                // 角色匹配，允许访问
                 return true;
             }
-            int[] teamRoles = authorizedAnnotation.TeamRole();
-            // 验证角色是否满足权限要求
-            int[] allowedRoles = authorizedAnnotation.roles();
-            if(role==2&&teamRoles.length!=0){
-                for (Integer allowedRole : allowedRoles) {
-                    for (Integer allowedTeamRole:teamRoles) {
-                        String account = info.get("account").toString();
-                        Map<String,Object> map =new HashMap<>();
-                        map.put("account",account);
-                        Integer teamRole = teamMembersMapper.selectByMap(map).get(0).getTeamRole();
-                        if (allowedRole.equals(role)&&allowedTeamRole.equals(teamRole)) {
-                            // 角色匹配，允许访问
-                            return true;
-                        }
-                    }
-                }}
-            else {
-                for (Integer allowedRole : allowedRoles) {
-                    if (allowedRole.equals(role)) {
-                        // 角色匹配，允许访问
-                        return true;
-                    }
-                }
-            }
-            throw new LocalRunTimeException(ErrorEnum.AUTHORITY_ERROR);
         }
-        throw new LocalRunTimeException(ErrorEnum.EMPTY_TOKEN);
+        throw new LocalRunTimeException(ErrorEnum.AUTHORITY_ERROR);
     }
 }

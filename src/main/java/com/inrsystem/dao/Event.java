@@ -1,4 +1,5 @@
 package com.inrsystem.dao;
+import cn.crowdos.kernel.resource.Task;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class Event {
+public class Event  {
     @TableId(type = IdType.AUTO)
     private Long id;
 
@@ -34,6 +35,4 @@ public class Event {
     private Date endTime;
     private Integer type;
     private Integer isEmailed;
-
-
 }

@@ -31,6 +31,8 @@ public class TeamMemberController {
     private Team_eventMapper team_eventMapper;
     @Resource
     private CompanyMapper companyMapper;
+    @Resource
+    private NormalTeamMembersMapper normalTeamMembersMapper;
 
     @GetMapping("/test")
     public Map<String, Object> getInfo(@RequestAttribute("info") Map<String, Object> info) {
@@ -64,53 +66,42 @@ public class TeamMemberController {
     }
     //获取团队的成员
     @GetMapping("/getTeamMembers")
-    public List<TeamMembers> gerTeamMembers(@RequestAttribute("info") Map<String, Object> info){
+    public List<NormalTeamMembers> gerTeamMembers(@RequestAttribute("info") Map<String, Object> info){
         TeamMembers teamMembers = teamMembersMapper.selectByMap(info).get(0);
-        return teamMembersMapper.getSameTeamMembers(teamMembers.getTeamId());
+        return normalTeamMembersMapper.getSameTeamMembers(teamMembers.getTeamId());
     }
-
-   @PostMapping("/createTeam")
+//增加学员
+   @PostMapping ("/addMembers")
     public void creatTeam(@RequestAttribute("info") Map<String, Object> info,@RequestBody()Map<String,Object> map){
-    String teamName = map.get("teamName").toString();
-    if(teamMapper.getSameName(teamName)>0){
-        throw new LocalRunTimeException(ErrorEnum.MULTIPLY_NAME);
+       TeamMembers teamMembers = teamMembersMapper.selectByMap(info).get(0);
+       Long teamId = teamMembers.getTeamId();
+       List<Map<String,Object>> members = (List<Map<String, Object>>) map.get("members");
+       for (Map<String,Object> m :members) {
+           Map<String,Object> map1 =new HashMap<>();
+           map1.put("name",m.get("name").toString());
+           List<NormalTeamMembers> normalTeamMembers1 = normalTeamMembersMapper.selectByMap(map1);
+           if(!normalTeamMembers1.isEmpty()){
+               continue;
+           }
+           String name = m.get("name").toString();
+           String email = m.get("email").toString();
+           NormalTeamMembers normalTeamMembers = new NormalTeamMembers();
+           normalTeamMembers.setName(name);
+           normalTeamMembers.setEmail(email);
+           normalTeamMembers.setTeamId(teamId);
+           int insert = normalTeamMembersMapper.insert(normalTeamMembers);
+           if(insert==0){
+               throw new LocalRunTimeException(ErrorEnum.ERROR_INSERT);
+           }
+       }
     }
-    Map<String, Object> selectMap = new HashMap<>();
-    selectMap.put("name",teamName);
-    List<Team> teams = teamMapper.selectByMap(selectMap);
-    if(!teams.isEmpty()){
-        throw new LocalRunTimeException(ErrorEnum.NAME_EXIST);
+//删除成员
+    @PostMapping ("/deleteMembers/{id}")
+    public Boolean deleteMembers(@RequestAttribute("info") Map<String, Object> info,@PathVariable("id")Integer id){
+        int i = normalTeamMembersMapper.deleteById(id);
+        return i!=0?true:false;
     }
-    Team team = new Team();
-    team.setName(teamName);
-    int insert = teamMapper.insert(team);
-    if(insert==0){
-        throw new LocalRunTimeException(ErrorEnum.ERROR_INSERT);
-    }
-    //selectMap.put("name",teamName);
-    Team team1 = teamMapper.selectByMap(selectMap).get(0);
-    Integer id = team1.getId();
-    List<Map<String,Object>> members = (List<Map<String, Object>>) map.get("members");
-    if (members.isEmpty()){
-        throw new LocalRunTimeException(ErrorEnum.ERROR_GET_MEMBER_INFORMATION);
-    }
-    for (Map<String,Object> m:members) {
-        String name = m.get("name").toString();
-        if (teamMembersMapper.getMembersByName(name).isEmpty()){
-            throw new LocalRunTimeException(ErrorEnum.NOT_EXIST);
-        }
-        TeamMembers teamMembers = teamMembersMapper.getMembersByName(name).get(0);
 
-        if(teamMembers.getTeamId()!=null){
-            throw new LocalRunTimeException(ErrorEnum.MULTIPLY_ENTER);
-        }
-        else {
-        Boolean aBoolean = teamMembersMapper.creatTeam(id, (Integer) m.get("team_role"), m.get("name").toString());
-        if(!aBoolean){
-            throw new LocalRunTimeException(ErrorEnum.ERROR_CREAT_TEAM);
-        }}
-    }
-    }
 //      //获取团队信息
 //@GetMapping("/getTeamInformation")
 //    public Map<String,Object> getTeamInformation(@RequestAttribute("info") Map<String,Object> info){
@@ -137,7 +128,8 @@ public class TeamMemberController {
 //}
     //获取推送过来项目的信息
     @GetMapping("/getEventInformation")
-    public Map<String,Object> getEventInformation(@RequestAttribute("info") Map<String,Object> info,@RequestParam("eventId")Integer eventId){
+    public Map<String,Object> getEventInformation(@RequestAttribute("info") Map<String,Object> info,
+                                                  @RequestParam("eventId")Integer eventId){
         Map<String,Object> map =new HashMap<>();
         Event event = eventMapper.selectById(eventId);
         if (event.getRemark()==0||event.getRemark()==1){
@@ -157,9 +149,12 @@ public class TeamMemberController {
         return map;
     }
     //
-    @Authorized(TeamRole = {1})
+
     @PostMapping("/postAchievement")
     public boolean postAchievement(@RequestAttribute("info") Map<String,Object> info, @RequestBody Map<String,Object> map){
+        if(teamMembersMapper.selectByMap(info).isEmpty()){
+            return false;
+        }
         Long teamId = teamMembersMapper.selectByMap(info).get(0).getTeamId();
         Achievement achievement=new Achievement();
         String title = map.get("title").toString();
@@ -212,10 +207,11 @@ public class TeamMemberController {
 
     //获取中标的任务信息
     @GetMapping("/getSuccessfullyEventInformation/{state}")
-    public List<Map<String,Object>> getSuccessEvent(@RequestAttribute("info") Map<String,Object> info,@PathVariable("state")Integer state){
+    public List<Map<String,Object>> getSuccessEvent(@RequestAttribute("info") Map<String,Object> info,
+                                                    @PathVariable("state")Integer state){
      List<Map<String,Object>> list =new ArrayList<>();
-
-        List<Team_event> statedByTeamId = team_eventMapper.getStatedByTeamId(teamMembersMapper.selectByMap(info).get(0).getTeamId(),state);
+     List<Team_event> statedByTeamId = team_eventMapper.getStatedByTeamId(teamMembersMapper.selectByMap(info).get(0)
+                     .getTeamId(),state);
         for (Team_event t:statedByTeamId) {
           Map<String, Object> map = new HashMap<>();
             Event event = eventMapper.selectById(t.getEventId());

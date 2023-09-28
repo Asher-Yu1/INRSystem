@@ -1,7 +1,9 @@
 package com.inrsystem.controller;
 
+
 import com.inrsystem.dao.Administrators;
 import com.inrsystem.dao.Company;
+import com.inrsystem.dao.CrowdKernelComponent;
 import com.inrsystem.dao.TeamMembers;
 import com.inrsystem.enums.ErrorEnum;
 import com.inrsystem.exception.LocalRunTimeException;
@@ -25,6 +27,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 public class LoginController {
+
     @Resource
     private JwtUtil jwtUtil;
     @Resource
@@ -35,6 +38,8 @@ public class LoginController {
     private AdministratorsMapper administratorsMapper;
     @Resource
     private TeamMembersMapper teamMembersMapper;
+
+
     @PostMapping("/login")
     public Map<String,Object> login(@RequestBody Map<String,Object> map){
         String account = map.get("account").toString();
