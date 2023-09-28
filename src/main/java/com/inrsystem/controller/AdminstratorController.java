@@ -65,7 +65,6 @@ public class AdminstratorController {
     @PostMapping("auditEvents/{id}")
     public Boolean auditEvents(@RequestAttribute("info") Map<String, Object> info,@PathVariable("id")Integer eventId,
                             @RequestBody()Map<String,Object> map){
-        Boolean a=false;
         Integer remark = (Integer) map.get("remark");
         Integer number = eventMapper.updateEventState(remark, eventId);
         if (number==0){

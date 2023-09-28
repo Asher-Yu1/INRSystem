@@ -8,20 +8,16 @@ import com.inrsystem.mapper.*;
 import com.inrsystem.service.CompanyService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.jdbc.Null;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
-
-import static java.lang.Double.POSITIVE_INFINITY;
 
 @Slf4j
 @RestController
 @RequestMapping("/companies")
 @Authorized(roles = {1})
 public class CompanyController {
+    final CrowdKernelComponent crowdKernelComponent;
    @Resource
    private CompanyMapper companyMapper;
     @Resource
@@ -37,6 +33,13 @@ public class CompanyController {
    private Team_eventMapper team_eventMapper;
    @Resource
    private TeamMapper teamMapper;
+   @Resource
+   private NormalTeamMembersMapper normalTeamMembersMapper;
+
+    public CompanyController(CrowdKernelComponent crowdKernelComponent) {
+        this.crowdKernelComponent = crowdKernelComponent;
+    }
+
     @GetMapping("/test")
     public Map<String, Object> getInfo(@RequestAttribute("info") Map<String, Object> info) {
         Map<String, Object> map = new HashMap<>();
@@ -75,7 +78,6 @@ public class CompanyController {
         event.setEndTime( new java.sql.Date(date1.getTime()));
         event.setRemark(0);
         event.setState(0);
-
         int insert = eventMapper.insert(event);
        return (insert!=0)?true:false;
     }
@@ -88,7 +90,7 @@ public class CompanyController {
       map.put("id",achievement.getId());
       map.put("title",achievement.getTitle());
       map.put("type",achievement.getType());
-      map.put("member_id",achievement.getTeamId());
+      map.put("team_id",achievement.getTeamId());
       if(achievement.getFile()!=null){
           map.put("file",achievement.getFile());
       }
@@ -97,7 +99,8 @@ public class CompanyController {
 
 //获取已发布任务列表
       @GetMapping("/getEventDetails")
-    public List<Map<String,Object>> getEventDetails(@RequestAttribute("info") Map<String, Object> info,@RequestParam()Map<String,Object> map1){
+    public List<Map<String,Object>> getEventDetails(@RequestAttribute("info") Map<String, Object> info
+              ,@RequestParam()Map<String,Object> map1){
           List<Map<String,Object>> list=new ArrayList<>();
          Company company = companyMapper.selectByMap(info).get(0);
          map1.put("company_id",company.getId());
@@ -154,12 +157,12 @@ public class CompanyController {
     public Map<String,Object> getTeamDetails(@PathVariable Long team_id,
                                              @RequestAttribute("info")Map<String,Object> info){
         Map<String,Object> returnMap =new HashMap<>();
-        List<TeamMembers> sameTeamMembers = teamMembersMapper.getSameTeamMembers(team_id);
+        List<NormalTeamMembers> normalTeamMembers = normalTeamMembersMapper.getSameTeamMembers(team_id);
         List<Map<String,Object>>  members=new ArrayList<>();
-        for (TeamMembers t:sameTeamMembers) {
+        for (NormalTeamMembers t:normalTeamMembers) {
             Map<String,Object> map1=new HashMap<>();
             map1.put("name",t.getName());
-            map1.put("role",t.getTeamRole());
+           map1.put("email",t.getEmail());
             members.add(map1);
         }
 

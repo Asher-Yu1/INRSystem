@@ -1,23 +1,23 @@
-2023-09-24T12:20:52.086+08:00  INFO 4548 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 4548 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-09-24T12:20:52.097+08:00  INFO 4548 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-24T12:20:52.666+08:00  INFO 4548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-09-24T12:20:52.669+08:00  INFO 4548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-09-24T12:20:52.699+08:00  INFO 4548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2023-09-24T12:20:53.382+08:00  INFO 4548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
-2023-09-24T12:20:53.384+08:00  INFO 4548 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
-2023-09-24T12:20:53.384+08:00  INFO 4548 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
-2023-09-24T12:20:53.392+08:00  INFO 4548 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
-2023-09-24T12:20:53.402+08:00  INFO 4548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-24T12:20:53.403+08:00  INFO 4548 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-09-24T12:20:53.489+08:00  INFO 4548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-24T12:20:53.490+08:00  INFO 4548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1357 ms
-2023-09-24T12:20:54.306+08:00  WARN 4548 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-09-24T12:20:54.307+08:00  WARN 4548 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-09-24T12:20:54.373+08:00  INFO 4548 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:20:54.383+08:00  INFO 4548 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:20:54.383+08:00  INFO 4548 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:20:54.383+08:00  INFO 4548 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:20:54.384+08:00  INFO 4548 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T21:26:13.523+08:00  INFO 15900 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 15900 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-27T21:26:13.533+08:00  INFO 15900 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T21:26:14.310+08:00  INFO 15900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-27T21:26:14.313+08:00  INFO 15900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-27T21:26:14.342+08:00  INFO 15900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-09-27T21:26:14.911+08:00  INFO 15900 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-09-27T21:26:14.912+08:00  INFO 15900 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2023-09-27T21:26:14.912+08:00  INFO 15900 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2023-09-27T21:26:14.919+08:00  INFO 15900 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2023-09-27T21:26:14.928+08:00  INFO 15900 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-27T21:26:14.928+08:00  INFO 15900 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-27T21:26:14.999+08:00  INFO 15900 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-27T21:26:14.999+08:00  INFO 15900 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1430 ms
+2023-09-27T21:26:15.662+08:00  WARN 15900 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-27T21:26:15.662+08:00  WARN 15900 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-27T21:26:15.733+08:00  INFO 15900 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T21:26:15.743+08:00  INFO 15900 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T21:26:15.743+08:00  INFO 15900 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T21:26:15.744+08:00  INFO 15900 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T21:26:15.744+08:00  INFO 15900 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -25,18 +25,18 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:20:54.384+08:00  INFO 4548 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2023-09-24T12:20:54.384+08:00  INFO 4548 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:20:54.384+08:00  INFO 4548 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@46c662f2
-2023-09-24T12:20:54.386+08:00  INFO 4548 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:20:55.207+08:00  INFO 4548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
-2023-09-24T12:20:55.224+08:00  INFO 4548 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 3.538 seconds (process running for 4.542)
-2023-09-24T12:20:55.235+08:00  INFO 4548 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:20:55.235+08:00  INFO 4548 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
-2023-09-24T12:20:55.235+08:00  INFO 4548 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:20:55.235+08:00  INFO 4548 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:20:55.236+08:00  INFO 4548 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:20:55.236+08:00  INFO 4548 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T21:26:15.744+08:00  INFO 15900 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-09-27T21:26:15.744+08:00  INFO 15900 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T21:26:15.744+08:00  INFO 15900 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@40cf6254
+2023-09-27T21:26:15.747+08:00  INFO 15900 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T21:26:16.092+08:00  INFO 15900 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-09-27T21:26:16.100+08:00  INFO 15900 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.964 seconds (process running for 4.043)
+2023-09-27T21:26:16.103+08:00  INFO 15900 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T21:26:16.103+08:00  INFO 15900 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2023-09-27T21:26:16.104+08:00  INFO 15900 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T21:26:16.104+08:00  INFO 15900 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T21:26:16.104+08:00  INFO 15900 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T21:26:16.104+08:00  INFO 15900 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -44,65 +44,188 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:20:55.236+08:00  INFO 4548 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2023-09-24T12:20:55.236+08:00  INFO 4548 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:20:55.236+08:00  INFO 4548 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:21:16.905+08:00  INFO 4548 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
-2023-09-24T12:21:17.439+08:00  INFO 4548 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-24T12:21:19.163+08:00  INFO 4548 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ad6a20c
-2023-09-24T12:21:19.169+08:00  INFO 4548 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-24T12:22:32.779+08:00 ERROR 4548 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
+2023-09-27T21:26:16.104+08:00  INFO 15900 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-09-27T21:26:16.104+08:00  INFO 15900 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T21:26:16.104+08:00  INFO 15900 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T21:26:26.109+08:00  INFO 15900 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
+2023-09-27T21:26:26.121+08:00  INFO 15900 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-27T21:26:26.913+08:00  INFO 15900 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79611f88
+2023-09-27T21:26:26.914+08:00  INFO 15900 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-27T22:01:46.587+08:00  WARN 15900 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m49s96ms68µs100ns).
+2023-09-27T22:37:20.456+08:00  INFO 15900 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:37:20.473+08:00  INFO 15900 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2023-09-27T22:37:20.473+08:00  INFO 15900 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2023-09-27T22:37:20.473+08:00  INFO 15900 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:37:20.473+08:00  INFO 15900 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2023-09-27T22:37:20.474+08:00  INFO 15900 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-27T22:37:20.478+08:00  INFO 15900 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-27T22:37:22.646+08:00  INFO 28496 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 28496 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-27T22:37:22.649+08:00  INFO 28496 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T22:37:23.148+08:00  INFO 28496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-27T22:37:23.151+08:00  INFO 28496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-27T22:37:23.176+08:00  INFO 28496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-09-27T22:37:23.670+08:00  INFO 28496 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-09-27T22:37:23.670+08:00  INFO 28496 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2023-09-27T22:37:23.670+08:00  INFO 28496 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2023-09-27T22:37:23.672+08:00  INFO 28496 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2023-09-27T22:37:23.679+08:00  INFO 28496 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-27T22:37:23.679+08:00  INFO 28496 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-27T22:37:23.752+08:00  INFO 28496 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-27T22:37:23.753+08:00  INFO 28496 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1073 ms
+2023-09-27T22:37:24.287+08:00  WARN 28496 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-27T22:37:24.288+08:00  WARN 28496 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-27T22:37:24.351+08:00  INFO 28496 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:37:24.359+08:00  INFO 28496 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:37:24.359+08:00  INFO 28496 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:37:24.360+08:00  INFO 28496 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:37:24.360+08:00  INFO 28496 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-09-27T22:37:24.360+08:00  INFO 28496 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-09-27T22:37:24.361+08:00  INFO 28496 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:37:24.361+08:00  INFO 28496 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2f60cbf2
+2023-09-27T22:37:24.362+08:00  INFO 28496 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:37:24.718+08:00  INFO 28496 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-09-27T22:37:24.727+08:00  INFO 28496 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.434 seconds (process running for 2.961)
+2023-09-27T22:37:24.731+08:00  INFO 28496 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:37:24.731+08:00  INFO 28496 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2023-09-27T22:37:24.732+08:00  INFO 28496 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:37:24.732+08:00  INFO 28496 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:37:24.732+08:00  INFO 28496 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:37:24.732+08:00  INFO 28496 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-09-27T22:37:24.732+08:00  INFO 28496 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-09-27T22:37:24.732+08:00  INFO 28496 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:37:24.732+08:00  INFO 28496 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:37:51.511+08:00  INFO 28496 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
+2023-09-27T22:37:52.186+08:00  INFO 28496 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-27T22:37:53.434+08:00  INFO 28496 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@15c854bc
+2023-09-27T22:37:53.440+08:00  INFO 28496 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-27T22:39:35.410+08:00  WARN 28496 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m41s868ms496µs).
+2023-09-27T22:39:35.431+08:00  INFO 28496 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:39:35.443+08:00  INFO 28496 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2023-09-27T22:39:35.443+08:00  INFO 28496 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2023-09-27T22:39:35.444+08:00  INFO 28496 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:39:35.444+08:00  INFO 28496 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2023-09-27T22:39:35.445+08:00  INFO 28496 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-27T22:39:35.516+08:00  INFO 28496 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-27T22:39:37.669+08:00  INFO 15744 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 15744 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-27T22:39:37.671+08:00  INFO 15744 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T22:39:38.108+08:00  INFO 15744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-27T22:39:38.111+08:00  INFO 15744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-27T22:39:38.132+08:00  INFO 15744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-09-27T22:39:38.582+08:00  INFO 15744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-09-27T22:39:38.583+08:00  INFO 15744 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2023-09-27T22:39:38.583+08:00  INFO 15744 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2023-09-27T22:39:38.585+08:00  INFO 15744 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2023-09-27T22:39:38.591+08:00  INFO 15744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-27T22:39:38.591+08:00  INFO 15744 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-27T22:39:38.654+08:00  INFO 15744 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-27T22:39:38.654+08:00  INFO 15744 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 955 ms
+2023-09-27T22:39:39.153+08:00  WARN 15744 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-27T22:39:39.153+08:00  WARN 15744 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-27T22:39:39.220+08:00  INFO 15744 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:39:39.227+08:00  INFO 15744 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:39:39.227+08:00  INFO 15744 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:39:39.229+08:00  INFO 15744 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:39:39.229+08:00  INFO 15744 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-09-27T22:39:39.229+08:00  INFO 15744 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-09-27T22:39:39.229+08:00  INFO 15744 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:39:39.229+08:00  INFO 15744 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2f60cbf2
+2023-09-27T22:39:39.231+08:00  INFO 15744 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:39:39.529+08:00  INFO 15744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-09-27T22:39:39.538+08:00  INFO 15744 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.197 seconds (process running for 2.908)
+2023-09-27T22:39:39.543+08:00  INFO 15744 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:39:39.543+08:00  INFO 15744 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2023-09-27T22:39:39.543+08:00  INFO 15744 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:39:39.543+08:00  INFO 15744 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:39:39.543+08:00  INFO 15744 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:39:39.543+08:00  INFO 15744 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-09-27T22:39:39.543+08:00  INFO 15744 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-09-27T22:39:39.543+08:00  INFO 15744 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:39:39.543+08:00  INFO 15744 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:39:54.521+08:00  INFO 15744 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
+2023-09-27T22:39:56.168+08:00  INFO 15744 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-27T22:39:57.467+08:00  INFO 15744 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58cdd369
+2023-09-27T22:39:57.472+08:00  INFO 15744 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-27T22:40:13.760+08:00 ERROR 15744 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
 
 java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team_event.getBid()" because "maxTeam" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:186) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:204) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:84) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:51) ~[classes/:na]
 	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
 
-2023-09-24T12:22:33.384+08:00 ERROR 4548 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
+2023-09-27T22:40:14.624+08:00 ERROR 15744 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
 
 org.quartz.SchedulerException: Job threw an unhandled exception.
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
 Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team_event.getBid()" because "maxTeam" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:186) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:204) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:84) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:51) ~[classes/:na]
 	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	... 1 common frames omitted
 
-2023-09-24T12:23:10.585+08:00  INFO 4548 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:23:10.598+08:00  INFO 4548 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
-2023-09-24T12:23:10.599+08:00  INFO 4548 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2023-09-24T12:23:10.599+08:00  INFO 4548 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:23:10.599+08:00  INFO 4548 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2023-09-24T12:23:10.600+08:00  INFO 4548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-24T12:23:10.603+08:00  INFO 4548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-24T12:23:14.647+08:00  INFO 17564 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 17564 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-09-24T12:23:14.649+08:00  INFO 17564 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-24T12:23:15.286+08:00  INFO 17564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-09-24T12:23:15.288+08:00  INFO 17564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-09-24T12:23:15.310+08:00  INFO 17564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2023-09-24T12:23:15.760+08:00  INFO 17564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
-2023-09-24T12:23:15.761+08:00  INFO 17564 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
-2023-09-24T12:23:15.761+08:00  INFO 17564 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
-2023-09-24T12:23:15.762+08:00  INFO 17564 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
-2023-09-24T12:23:15.768+08:00  INFO 17564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-24T12:23:15.769+08:00  INFO 17564 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-09-24T12:23:15.827+08:00  INFO 17564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-24T12:23:15.827+08:00  INFO 17564 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1151 ms
-2023-09-24T12:23:16.330+08:00  WARN 17564 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-09-24T12:23:16.330+08:00  WARN 17564 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-09-24T12:23:16.392+08:00  INFO 17564 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:23:16.400+08:00  INFO 17564 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:23:16.400+08:00  INFO 17564 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:23:16.401+08:00  INFO 17564 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:23:16.401+08:00  INFO 17564 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:40:44.553+08:00  WARN 15744 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46s980ms463µs600ns).
+2023-09-27T22:40:44.575+08:00  INFO 15744 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:40:44.587+08:00  INFO 15744 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2023-09-27T22:40:44.587+08:00  INFO 15744 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2023-09-27T22:40:44.587+08:00  INFO 15744 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:40:44.587+08:00  INFO 15744 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2023-09-27T22:40:44.588+08:00  INFO 15744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-27T22:40:44.720+08:00  INFO 15744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-27T22:40:46.600+08:00  INFO 19184 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 19184 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-27T22:40:46.602+08:00  INFO 19184 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T22:40:47.012+08:00  INFO 19184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-27T22:40:47.014+08:00  INFO 19184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-27T22:40:47.037+08:00  INFO 19184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-09-27T22:40:47.450+08:00  INFO 19184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-09-27T22:40:47.451+08:00  INFO 19184 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2023-09-27T22:40:47.451+08:00  INFO 19184 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2023-09-27T22:40:47.452+08:00  INFO 19184 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2023-09-27T22:40:47.458+08:00  INFO 19184 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-27T22:40:47.458+08:00  INFO 19184 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-27T22:40:47.516+08:00  INFO 19184 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-27T22:40:47.516+08:00  INFO 19184 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 888 ms
+2023-09-27T22:40:47.981+08:00  WARN 19184 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-27T22:40:47.981+08:00  WARN 19184 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-27T22:40:48.056+08:00  INFO 19184 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:40:48.063+08:00  INFO 19184 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:40:48.063+08:00  INFO 19184 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:40:48.064+08:00  INFO 19184 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:40:48.064+08:00  INFO 19184 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -110,18 +233,18 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:23:16.401+08:00  INFO 17564 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2023-09-24T12:23:16.401+08:00  INFO 17564 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:23:16.401+08:00  INFO 17564 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@54bb1194
-2023-09-24T12:23:16.403+08:00  INFO 17564 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:23:17.016+08:00  INFO 17564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
-2023-09-24T12:23:17.028+08:00  INFO 17564 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.676 seconds (process running for 4.727)
-2023-09-24T12:23:17.034+08:00  INFO 17564 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:23:17.034+08:00  INFO 17564 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
-2023-09-24T12:23:17.035+08:00  INFO 17564 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:23:17.035+08:00  INFO 17564 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:23:17.035+08:00  INFO 17564 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:23:17.035+08:00  INFO 17564 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:40:48.064+08:00  INFO 19184 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-09-27T22:40:48.064+08:00  INFO 19184 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:40:48.064+08:00  INFO 19184 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@247bbfba
+2023-09-27T22:40:48.066+08:00  INFO 19184 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:40:48.343+08:00  INFO 19184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-09-27T22:40:48.352+08:00  INFO 19184 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.057 seconds (process running for 2.492)
+2023-09-27T22:40:48.356+08:00  INFO 19184 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:40:48.356+08:00  INFO 19184 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2023-09-27T22:40:48.356+08:00  INFO 19184 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:40:48.356+08:00  INFO 19184 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:40:48.357+08:00  INFO 19184 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:40:48.357+08:00  INFO 19184 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -129,65 +252,65 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:23:17.035+08:00  INFO 17564 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2023-09-24T12:23:17.035+08:00  INFO 17564 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:23:17.035+08:00  INFO 17564 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:23:29.695+08:00  INFO 17564 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
-2023-09-24T12:23:29.911+08:00  INFO 17564 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-24T12:23:31.459+08:00  INFO 17564 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@679feeb0
-2023-09-24T12:23:31.465+08:00  INFO 17564 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-24T12:26:46.872+08:00 ERROR 17564 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
+2023-09-27T22:40:48.357+08:00  INFO 19184 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-09-27T22:40:48.357+08:00  INFO 19184 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:40:48.357+08:00  INFO 19184 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:40:58.361+08:00  INFO 19184 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
+2023-09-27T22:40:58.372+08:00  INFO 19184 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-27T22:40:58.999+08:00  INFO 19184 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ad545a4
+2023-09-27T22:40:59.000+08:00  INFO 19184 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-27T22:40:59.509+08:00 ERROR 19184 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
 
 java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team_event.getBid()" because "maxTeam" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:186) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:204) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:84) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:51) ~[classes/:na]
 	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
 
-2023-09-24T12:26:48.033+08:00 ERROR 17564 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
+2023-09-27T22:40:59.511+08:00 ERROR 19184 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
 
 org.quartz.SchedulerException: Job threw an unhandled exception.
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
 Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team_event.getBid()" because "maxTeam" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:186) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:204) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:84) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:51) ~[classes/:na]
 	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	... 1 common frames omitted
 
-2023-09-24T12:26:54.816+08:00  INFO 17564 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:26:54.828+08:00  INFO 17564 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
-2023-09-24T12:26:54.829+08:00  INFO 17564 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2023-09-24T12:26:54.829+08:00  INFO 17564 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:26:54.829+08:00  INFO 17564 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2023-09-24T12:26:54.830+08:00  INFO 17564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-24T12:26:54.834+08:00  INFO 17564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-24T12:26:56.931+08:00  INFO 15848 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 15848 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-09-24T12:26:56.933+08:00  INFO 15848 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-24T12:26:57.354+08:00  INFO 15848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-09-24T12:26:57.356+08:00  INFO 15848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-09-24T12:26:57.377+08:00  INFO 15848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2023-09-24T12:26:57.809+08:00  INFO 15848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
-2023-09-24T12:26:57.810+08:00  INFO 15848 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
-2023-09-24T12:26:57.810+08:00  INFO 15848 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
-2023-09-24T12:26:57.812+08:00  INFO 15848 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
-2023-09-24T12:26:57.817+08:00  INFO 15848 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-24T12:26:57.818+08:00  INFO 15848 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-09-24T12:26:57.878+08:00  INFO 15848 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-24T12:26:57.879+08:00  INFO 15848 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 918 ms
-2023-09-24T12:26:58.380+08:00  WARN 15848 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-09-24T12:26:58.381+08:00  WARN 15848 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-09-24T12:26:58.436+08:00  INFO 15848 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:26:58.445+08:00  INFO 15848 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:26:58.445+08:00  INFO 15848 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:26:58.446+08:00  INFO 15848 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:26:58.446+08:00  INFO 15848 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:41:15.475+08:00  INFO 19184 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:41:15.486+08:00  INFO 19184 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2023-09-27T22:41:15.487+08:00  INFO 19184 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2023-09-27T22:41:15.487+08:00  INFO 19184 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:41:15.487+08:00  INFO 19184 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2023-09-27T22:41:15.487+08:00  INFO 19184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-27T22:41:15.494+08:00  INFO 19184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-27T22:41:17.606+08:00  INFO 24832 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 24832 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-27T22:41:17.609+08:00  INFO 24832 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T22:41:18.067+08:00  INFO 24832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-27T22:41:18.070+08:00  INFO 24832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-27T22:41:18.093+08:00  INFO 24832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-09-27T22:41:18.547+08:00  INFO 24832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-09-27T22:41:18.549+08:00  INFO 24832 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2023-09-27T22:41:18.549+08:00  INFO 24832 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2023-09-27T22:41:18.550+08:00  INFO 24832 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2023-09-27T22:41:18.557+08:00  INFO 24832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-27T22:41:18.557+08:00  INFO 24832 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-27T22:41:18.625+08:00  INFO 24832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-27T22:41:18.625+08:00  INFO 24832 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 987 ms
+2023-09-27T22:41:19.122+08:00  WARN 24832 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-27T22:41:19.122+08:00  WARN 24832 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-27T22:41:19.196+08:00  INFO 24832 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:41:19.204+08:00  INFO 24832 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:41:19.204+08:00  INFO 24832 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:41:19.205+08:00  INFO 24832 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:41:19.205+08:00  INFO 24832 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -195,18 +318,18 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:26:58.446+08:00  INFO 15848 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2023-09-24T12:26:58.446+08:00  INFO 15848 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:26:58.446+08:00  INFO 15848 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@13908f9c
-2023-09-24T12:26:58.448+08:00  INFO 15848 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:26:59.156+08:00  INFO 15848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
-2023-09-24T12:26:59.168+08:00  INFO 15848 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.563 seconds (process running for 3.086)
-2023-09-24T12:26:59.174+08:00  INFO 15848 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:26:59.174+08:00  INFO 15848 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
-2023-09-24T12:26:59.174+08:00  INFO 15848 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:26:59.174+08:00  INFO 15848 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:26:59.174+08:00  INFO 15848 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:26:59.175+08:00  INFO 15848 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:41:19.205+08:00  INFO 24832 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-09-27T22:41:19.206+08:00  INFO 24832 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:41:19.206+08:00  INFO 24832 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3316527e
+2023-09-27T22:41:19.208+08:00  INFO 24832 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:41:19.527+08:00  INFO 24832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-09-27T22:41:19.536+08:00  INFO 24832 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.276 seconds (process running for 2.873)
+2023-09-27T22:41:19.540+08:00  INFO 24832 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:41:19.540+08:00  INFO 24832 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2023-09-27T22:41:19.540+08:00  INFO 24832 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:41:19.540+08:00  INFO 24832 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:41:19.540+08:00  INFO 24832 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:41:19.540+08:00  INFO 24832 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -214,67 +337,65 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:26:59.175+08:00  INFO 15848 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2023-09-24T12:26:59.175+08:00  INFO 15848 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:26:59.175+08:00  INFO 15848 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:27:11.143+08:00  INFO 15848 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
-2023-09-24T12:27:11.370+08:00  INFO 15848 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-24T12:27:13.037+08:00  INFO 15848 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5570a5eb
-2023-09-24T12:27:13.044+08:00  INFO 15848 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-24T12:30:37.783+08:00  WARN 15848 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56s831ms380µs300ns).
-2023-09-24T12:35:34.329+08:00  WARN 15848 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m56s545ms922µs600ns).
-2023-09-24T12:35:36.131+08:00 ERROR 15848 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
+2023-09-27T22:41:19.541+08:00  INFO 24832 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-09-27T22:41:19.541+08:00  INFO 24832 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:41:19.541+08:00  INFO 24832 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:41:41.055+08:00  INFO 24832 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
+2023-09-27T22:41:41.617+08:00  INFO 24832 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-27T22:41:42.890+08:00  INFO 24832 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@176b24c1
+2023-09-27T22:41:42.894+08:00  INFO 24832 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-27T22:41:58.529+08:00 ERROR 24832 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
 
 java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team_event.getBid()" because "maxTeam" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:186) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:204) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:84) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:51) ~[classes/:na]
 	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
 
-2023-09-24T12:35:36.530+08:00 ERROR 15848 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
+2023-09-27T22:41:58.532+08:00 ERROR 24832 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
 
 org.quartz.SchedulerException: Job threw an unhandled exception.
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
 Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team_event.getBid()" because "maxTeam" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:186) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:204) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:84) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:51) ~[classes/:na]
 	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	... 1 common frames omitted
 
-2023-09-24T12:35:39.655+08:00  INFO 15848 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:35:39.669+08:00  INFO 15848 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
-2023-09-24T12:35:39.669+08:00  INFO 15848 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2023-09-24T12:35:39.669+08:00  INFO 15848 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:35:39.669+08:00  INFO 15848 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2023-09-24T12:35:39.670+08:00  INFO 15848 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-24T12:35:39.673+08:00  INFO 15848 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-24T12:35:41.744+08:00  INFO 4560 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 4560 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-09-24T12:35:41.746+08:00  INFO 4560 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-24T12:35:42.171+08:00  INFO 4560 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-09-24T12:35:42.173+08:00  INFO 4560 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-09-24T12:35:42.195+08:00  INFO 4560 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2023-09-24T12:35:42.634+08:00  INFO 4560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
-2023-09-24T12:35:42.636+08:00  INFO 4560 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
-2023-09-24T12:35:42.636+08:00  INFO 4560 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
-2023-09-24T12:35:42.637+08:00  INFO 4560 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
-2023-09-24T12:35:42.643+08:00  INFO 4560 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-24T12:35:42.643+08:00  INFO 4560 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-09-24T12:35:42.705+08:00  INFO 4560 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-24T12:35:42.706+08:00  INFO 4560 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 932 ms
-2023-09-24T12:35:43.205+08:00  WARN 4560 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-09-24T12:35:43.206+08:00  WARN 4560 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-09-24T12:35:43.263+08:00  INFO 4560 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:35:43.270+08:00  INFO 4560 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:35:43.271+08:00  INFO 4560 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:35:43.271+08:00  INFO 4560 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:35:43.272+08:00  INFO 4560 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:42:02.845+08:00  INFO 24832 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:42:02.856+08:00  INFO 24832 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2023-09-27T22:42:02.857+08:00  INFO 24832 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2023-09-27T22:42:02.857+08:00  INFO 24832 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:42:02.857+08:00  INFO 24832 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2023-09-27T22:42:02.858+08:00  INFO 24832 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-27T22:42:02.863+08:00  INFO 24832 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-27T22:42:04.940+08:00  INFO 18996 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 18996 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-27T22:42:04.942+08:00  INFO 18996 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T22:42:05.382+08:00  INFO 18996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-27T22:42:05.384+08:00  INFO 18996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-27T22:42:05.409+08:00  INFO 18996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-09-27T22:42:05.854+08:00  INFO 18996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-09-27T22:42:05.854+08:00  INFO 18996 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2023-09-27T22:42:05.854+08:00  INFO 18996 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2023-09-27T22:42:05.856+08:00  INFO 18996 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2023-09-27T22:42:05.863+08:00  INFO 18996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-27T22:42:05.863+08:00  INFO 18996 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-27T22:42:05.927+08:00  INFO 18996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-27T22:42:05.927+08:00  INFO 18996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 957 ms
+2023-09-27T22:42:06.420+08:00  WARN 18996 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-27T22:42:06.421+08:00  WARN 18996 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-27T22:42:06.499+08:00  INFO 18996 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:42:06.507+08:00  INFO 18996 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:42:06.507+08:00  INFO 18996 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:42:06.507+08:00  INFO 18996 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:42:06.508+08:00  INFO 18996 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -282,18 +403,18 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:35:43.272+08:00  INFO 4560 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2023-09-24T12:35:43.272+08:00  INFO 4560 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:35:43.272+08:00  INFO 4560 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@249b54af
-2023-09-24T12:35:43.274+08:00  INFO 4560 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:35:43.941+08:00  INFO 4560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
-2023-09-24T12:35:43.953+08:00  INFO 4560 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.529 seconds (process running for 3.049)
-2023-09-24T12:35:43.958+08:00  INFO 4560 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:35:43.958+08:00  INFO 4560 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
-2023-09-24T12:35:43.959+08:00  INFO 4560 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:35:43.959+08:00  INFO 4560 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:35:43.959+08:00  INFO 4560 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:35:43.959+08:00  INFO 4560 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:42:06.508+08:00  INFO 18996 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-09-27T22:42:06.508+08:00  INFO 18996 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:42:06.508+08:00  INFO 18996 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5ad6f98e
+2023-09-27T22:42:06.509+08:00  INFO 18996 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:42:06.835+08:00  INFO 18996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-09-27T22:42:06.843+08:00  INFO 18996 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.23 seconds (process running for 2.827)
+2023-09-27T22:42:06.846+08:00  INFO 18996 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:42:06.846+08:00  INFO 18996 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2023-09-27T22:42:06.847+08:00  INFO 18996 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:42:06.847+08:00  INFO 18996 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:42:06.847+08:00  INFO 18996 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:42:06.847+08:00  INFO 18996 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -301,121 +422,65 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:35:43.959+08:00  INFO 4560 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2023-09-24T12:35:43.959+08:00  INFO 4560 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:35:43.959+08:00  INFO 4560 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:36:15.774+08:00  INFO 4560 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
-2023-09-24T12:36:15.782+08:00  INFO 4560 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:36:15.786+08:00  INFO 4560 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-24T12:36:15.794+08:00  INFO 4560 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
-2023-09-24T12:36:15.794+08:00  INFO 4560 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2023-09-24T12:36:15.794+08:00  INFO 4560 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:36:15.794+08:00  INFO 4560 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2023-09-24T12:36:17.901+08:00  INFO 15600 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 15600 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-09-24T12:36:17.903+08:00  INFO 15600 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-24T12:36:18.357+08:00  INFO 15600 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-09-24T12:36:18.359+08:00  INFO 15600 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-09-24T12:36:18.380+08:00  INFO 15600 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2023-09-24T12:36:18.810+08:00  INFO 15600 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
-2023-09-24T12:36:18.811+08:00  INFO 15600 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
-2023-09-24T12:36:18.811+08:00  INFO 15600 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
-2023-09-24T12:36:18.812+08:00  INFO 15600 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
-2023-09-24T12:36:18.819+08:00  INFO 15600 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-24T12:36:18.819+08:00  INFO 15600 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-09-24T12:36:18.878+08:00  INFO 15600 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-24T12:36:18.879+08:00  INFO 15600 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 944 ms
-2023-09-24T12:36:19.358+08:00  WARN 15600 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-09-24T12:36:19.359+08:00  WARN 15600 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-09-24T12:36:19.415+08:00  INFO 15600 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:36:19.423+08:00  INFO 15600 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:36:19.423+08:00  INFO 15600 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:36:19.424+08:00  INFO 15600 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:36:19.425+08:00  INFO 15600 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+2023-09-27T22:42:06.847+08:00  INFO 18996 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-09-27T22:42:06.847+08:00  INFO 18996 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:42:06.847+08:00  INFO 18996 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:42:33.280+08:00  INFO 18996 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
+2023-09-27T22:42:33.770+08:00  INFO 18996 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-27T22:42:35.076+08:00  INFO 18996 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@176b24c1
+2023-09-27T22:42:35.081+08:00  INFO 18996 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-27T22:43:17.955+08:00 ERROR 18996 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
 
-2023-09-24T12:36:19.425+08:00  INFO 15600 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2023-09-24T12:36:19.425+08:00  INFO 15600 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:36:19.425+08:00  INFO 15600 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1a0d313
-2023-09-24T12:36:19.427+08:00  INFO 15600 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:36:20.088+08:00  INFO 15600 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
-2023-09-24T12:36:20.100+08:00  INFO 15600 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.531 seconds (process running for 3.026)
-2023-09-24T12:36:20.105+08:00  INFO 15600 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:36:20.106+08:00  INFO 15600 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
-2023-09-24T12:36:20.106+08:00  INFO 15600 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:36:20.106+08:00  INFO 15600 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:36:20.106+08:00  INFO 15600 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:36:20.106+08:00  INFO 15600 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2023-09-24T12:36:20.106+08:00  INFO 15600 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2023-09-24T12:36:20.107+08:00  INFO 15600 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:36:20.107+08:00  INFO 15600 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:36:32.345+08:00  INFO 15600 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
-2023-09-24T12:36:32.556+08:00  INFO 15600 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-24T12:36:34.169+08:00  INFO 15600 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55aec669
-2023-09-24T12:36:34.175+08:00  INFO 15600 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-24T12:38:06.202+08:00 ERROR 15600 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
-
-java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.HashMap.get(Object)" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:226) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
+java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team_event.getBid()" because "maxTeam" is null
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:204) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:84) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:51) ~[classes/:na]
 	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
 
-2023-09-24T12:38:06.658+08:00 ERROR 15600 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
+2023-09-27T22:43:17.959+08:00 ERROR 18996 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
 
 org.quartz.SchedulerException: Job threw an unhandled exception.
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
-Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.HashMap.get(Object)" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:226) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
+Caused by: java.lang.NullPointerException: Cannot invoke "com.inrsystem.dao.Team_event.getBid()" because "maxTeam" is null
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:204) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:84) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:51) ~[classes/:na]
 	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	... 1 common frames omitted
 
-2023-09-24T12:38:59.243+08:00  INFO 15600 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:38:59.255+08:00  INFO 15600 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
-2023-09-24T12:38:59.255+08:00  INFO 15600 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2023-09-24T12:38:59.255+08:00  INFO 15600 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:38:59.255+08:00  INFO 15600 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2023-09-24T12:38:59.256+08:00  INFO 15600 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-24T12:38:59.260+08:00  INFO 15600 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-24T12:39:01.456+08:00  INFO 24652 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 24652 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-09-24T12:39:01.457+08:00  INFO 24652 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-24T12:39:01.882+08:00  INFO 24652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-09-24T12:39:01.884+08:00  INFO 24652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-09-24T12:39:01.911+08:00  INFO 24652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-2023-09-24T12:39:02.365+08:00  INFO 24652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
-2023-09-24T12:39:02.365+08:00  INFO 24652 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
-2023-09-24T12:39:02.365+08:00  INFO 24652 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
-2023-09-24T12:39:02.367+08:00  INFO 24652 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
-2023-09-24T12:39:02.373+08:00  INFO 24652 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-24T12:39:02.373+08:00  INFO 24652 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-09-24T12:39:02.430+08:00  INFO 24652 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-24T12:39:02.431+08:00  INFO 24652 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 949 ms
-2023-09-24T12:39:02.895+08:00  WARN 24652 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-09-24T12:39:02.896+08:00  WARN 24652 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-09-24T12:39:02.957+08:00  INFO 24652 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:39:02.966+08:00  INFO 24652 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:39:02.968+08:00  INFO 24652 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:39:02.969+08:00  INFO 24652 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:39:02.969+08:00  INFO 24652 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:43:17.978+08:00  INFO 18996 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:43:17.989+08:00  INFO 18996 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2023-09-27T22:43:17.989+08:00  INFO 18996 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2023-09-27T22:43:17.989+08:00  INFO 18996 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:43:17.989+08:00  INFO 18996 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2023-09-27T22:43:17.991+08:00  INFO 18996 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-27T22:43:18.424+08:00  INFO 18996 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-27T22:43:20.584+08:00  INFO 25468 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 25468 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-27T22:43:20.586+08:00  INFO 25468 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T22:43:21.045+08:00  INFO 25468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-27T22:43:21.047+08:00  INFO 25468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-27T22:43:21.069+08:00  INFO 25468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-09-27T22:43:21.534+08:00  INFO 25468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-09-27T22:43:21.534+08:00  INFO 25468 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2023-09-27T22:43:21.534+08:00  INFO 25468 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2023-09-27T22:43:21.536+08:00  INFO 25468 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2023-09-27T22:43:21.542+08:00  INFO 25468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-27T22:43:21.542+08:00  INFO 25468 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-27T22:43:21.608+08:00  INFO 25468 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-27T22:43:21.608+08:00  INFO 25468 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 993 ms
+2023-09-27T22:43:22.140+08:00  WARN 25468 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-27T22:43:22.140+08:00  WARN 25468 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-27T22:43:22.204+08:00  INFO 25468 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:43:22.211+08:00  INFO 25468 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:43:22.211+08:00  INFO 25468 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:43:22.212+08:00  INFO 25468 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:43:22.212+08:00  INFO 25468 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -423,18 +488,18 @@ Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubl
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:39:02.969+08:00  INFO 24652 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2023-09-24T12:39:02.970+08:00  INFO 24652 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:39:02.970+08:00  INFO 24652 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@7e81617a
-2023-09-24T12:39:02.972+08:00  INFO 24652 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:39:03.252+08:00  INFO 24652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
-2023-09-24T12:39:03.261+08:00  INFO 24652 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.133 seconds (process running for 2.574)
-2023-09-24T12:39:03.264+08:00  INFO 24652 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:39:03.265+08:00  INFO 24652 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
-2023-09-24T12:39:03.265+08:00  INFO 24652 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:39:03.265+08:00  INFO 24652 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:39:03.265+08:00  INFO 24652 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:39:03.266+08:00  INFO 24652 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:43:22.212+08:00  INFO 25468 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-09-27T22:43:22.212+08:00  INFO 25468 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:43:22.212+08:00  INFO 25468 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@631bc9f4
+2023-09-27T22:43:22.214+08:00  INFO 25468 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:43:22.527+08:00  INFO 25468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-09-27T22:43:22.537+08:00  INFO 25468 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.386 seconds (process running for 2.912)
+2023-09-27T22:43:22.539+08:00  INFO 25468 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:43:22.539+08:00  INFO 25468 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2023-09-27T22:43:22.540+08:00  INFO 25468 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:43:22.540+08:00  INFO 25468 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:43:22.540+08:00  INFO 25468 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:43:22.540+08:00  INFO 25468 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -442,151 +507,81 @@ Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubl
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T12:39:03.266+08:00  INFO 24652 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2023-09-24T12:39:03.266+08:00  INFO 24652 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:39:03.266+08:00  INFO 24652 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:39:13.270+08:00  INFO 24652 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
-2023-09-24T12:39:13.280+08:00  INFO 24652 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-24T12:39:13.906+08:00  INFO 24652 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6252789a
-2023-09-24T12:39:13.908+08:00  INFO 24652 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-24T12:39:14.801+08:00 ERROR 24652 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
+2023-09-27T22:43:22.540+08:00  INFO 25468 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-09-27T22:43:22.540+08:00  INFO 25468 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:43:22.540+08:00  INFO 25468 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:43:37.636+08:00  INFO 25468 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
+2023-09-27T22:43:46.044+08:00  INFO 25468 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-27T22:43:47.372+08:00  INFO 25468 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54cab5f8
+2023-09-27T22:43:47.377+08:00  INFO 25468 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-27T22:45:06.601+08:00 ERROR 25468 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
 
-java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.HashMap.get(Object)" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:226) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
-	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
+java.lang.RuntimeException: jakarta.mail.internet.AddressException: Local address contains illegal character in string ``[3501609542@qq.com]''
+	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:27) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
+Caused by: jakarta.mail.internet.AddressException: Local address contains illegal character
+	at jakarta.mail.internet.InternetAddress.checkAddress(InternetAddress.java:1348) ~[jakarta.mail-1.1.0.jar:na]
+	at jakarta.mail.internet.InternetAddress.parse(InternetAddress.java:1193) ~[jakarta.mail-1.1.0.jar:na]
+	at jakarta.mail.internet.InternetAddress.parse(InternetAddress.java:730) ~[jakarta.mail-1.1.0.jar:na]
+	at jakarta.mail.internet.InternetAddress.parse(InternetAddress.java:707) ~[jakarta.mail-1.1.0.jar:na]
+	at org.springframework.mail.javamail.MimeMessageHelper.parseAddress(MimeMessageHelper.java:735) ~[spring-context-support-6.0.11.jar:6.0.11]
+	at org.springframework.mail.javamail.MimeMessageHelper.setTo(MimeMessageHelper.java:614) ~[spring-context-support-6.0.11.jar:6.0.11]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.sendMail(CrowdOsAlgorithmServiceImpl.java:323) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:72) ~[classes/:na]
+	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
+	... 3 common frames omitted
 
-2023-09-24T12:39:14.804+08:00 ERROR 24652 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
+2023-09-27T22:45:06.962+08:00 ERROR 25468 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
 
 org.quartz.SchedulerException: Job threw an unhandled exception.
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.3.2.jar:na]
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
-Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.HashMap.get(Object)" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:226) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
-	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
+Caused by: java.lang.RuntimeException: jakarta.mail.internet.AddressException: Local address contains illegal character in string ``[3501609542@qq.com]''
+	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:27) ~[classes/:na]
 	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
 	... 1 common frames omitted
-
-2023-09-24T12:39:25.953+08:00  INFO 24652 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:39:25.963+08:00  INFO 24652 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
-2023-09-24T12:39:25.964+08:00  INFO 24652 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2023-09-24T12:39:25.964+08:00  INFO 24652 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T12:39:25.964+08:00  INFO 24652 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2023-09-24T12:39:25.965+08:00  INFO 24652 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-24T12:39:25.969+08:00  INFO 24652 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-24T12:39:28.243+08:00  INFO 700 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 700 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-09-24T12:39:28.245+08:00  INFO 700 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-24T12:39:28.679+08:00  INFO 700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-09-24T12:39:28.682+08:00  INFO 700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-09-24T12:39:28.703+08:00  INFO 700 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
-2023-09-24T12:39:29.138+08:00  INFO 700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
-2023-09-24T12:39:29.139+08:00  INFO 700 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
-2023-09-24T12:39:29.139+08:00  INFO 700 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
-2023-09-24T12:39:29.140+08:00  INFO 700 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
-2023-09-24T12:39:29.146+08:00  INFO 700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-24T12:39:29.146+08:00  INFO 700 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-09-24T12:39:29.207+08:00  INFO 700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-24T12:39:29.207+08:00  INFO 700 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 932 ms
-2023-09-24T12:39:29.706+08:00  WARN 700 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-09-24T12:39:29.706+08:00  WARN 700 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-09-24T12:39:29.758+08:00  INFO 700 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:39:29.765+08:00  INFO 700 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:39:29.766+08:00  INFO 700 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:39:29.766+08:00  INFO 700 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:39:29.767+08:00  INFO 700 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2023-09-24T12:39:29.767+08:00  INFO 700 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2023-09-24T12:39:29.767+08:00  INFO 700 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:39:29.767+08:00  INFO 700 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@13908f9c
-2023-09-24T12:39:29.769+08:00  INFO 700 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:39:30.440+08:00  INFO 700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
-2023-09-24T12:39:30.451+08:00  INFO 700 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.528 seconds (process running for 3.11)
-2023-09-24T12:39:30.457+08:00  INFO 700 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T12:39:30.457+08:00  INFO 700 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
-2023-09-24T12:39:30.457+08:00  INFO 700 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T12:39:30.457+08:00  INFO 700 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T12:39:30.457+08:00  INFO 700 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T12:39:30.457+08:00  INFO 700 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2023-09-24T12:39:30.457+08:00  INFO 700 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2023-09-24T12:39:30.457+08:00  INFO 700 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T12:39:30.457+08:00  INFO 700 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T12:39:42.377+08:00  INFO 700 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
-2023-09-24T12:39:42.612+08:00  INFO 700 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-24T12:39:44.117+08:00  INFO 700 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ad10335
-2023-09-24T12:39:44.123+08:00  INFO 700 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-24T14:33:58.430+08:00  WARN 700 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h52m3s786ms995µs300ns).
-2023-09-24T14:33:58.437+08:00 ERROR 700 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
-
-java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.HashMap.get(Object)" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:226) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
+Caused by: jakarta.mail.internet.AddressException: Local address contains illegal character
+	at jakarta.mail.internet.InternetAddress.checkAddress(InternetAddress.java:1348) ~[jakarta.mail-1.1.0.jar:na]
+	at jakarta.mail.internet.InternetAddress.parse(InternetAddress.java:1193) ~[jakarta.mail-1.1.0.jar:na]
+	at jakarta.mail.internet.InternetAddress.parse(InternetAddress.java:730) ~[jakarta.mail-1.1.0.jar:na]
+	at jakarta.mail.internet.InternetAddress.parse(InternetAddress.java:707) ~[jakarta.mail-1.1.0.jar:na]
+	at org.springframework.mail.javamail.MimeMessageHelper.parseAddress(MimeMessageHelper.java:735) ~[spring-context-support-6.0.11.jar:6.0.11]
+	at org.springframework.mail.javamail.MimeMessageHelper.setTo(MimeMessageHelper.java:614) ~[spring-context-support-6.0.11.jar:6.0.11]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.sendMail(CrowdOsAlgorithmServiceImpl.java:323) ~[classes/:na]
+	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:72) ~[classes/:na]
 	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
-	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
-	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
+	... 3 common frames omitted
 
-2023-09-24T14:33:58.444+08:00 ERROR 700 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
-
-org.quartz.SchedulerException: Job threw an unhandled exception.
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.3.2.jar:na]
-	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
-Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.HashMap.get(Object)" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:226) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
-	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
-	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
-	... 1 common frames omitted
-
-2023-09-24T14:33:58.483+08:00  INFO 700 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T14:33:58.501+08:00  INFO 700 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
-2023-09-24T14:33:58.501+08:00  INFO 700 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2023-09-24T14:33:58.501+08:00  INFO 700 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T14:33:58.501+08:00  INFO 700 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2023-09-24T14:33:58.505+08:00  INFO 700 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-24T14:33:58.833+08:00  INFO 700 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-24T14:34:02.883+08:00  INFO 19228 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 19228 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-09-24T14:34:02.884+08:00  INFO 19228 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-24T14:34:03.537+08:00  INFO 19228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-09-24T14:34:03.539+08:00  INFO 19228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-09-24T14:34:03.560+08:00  INFO 19228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2023-09-24T14:34:04.005+08:00  INFO 19228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
-2023-09-24T14:34:04.005+08:00  INFO 19228 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
-2023-09-24T14:34:04.006+08:00  INFO 19228 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
-2023-09-24T14:34:04.008+08:00  INFO 19228 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
-2023-09-24T14:34:04.016+08:00  INFO 19228 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-24T14:34:04.016+08:00  INFO 19228 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-09-24T14:34:04.084+08:00  INFO 19228 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-24T14:34:04.084+08:00  INFO 19228 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1172 ms
-2023-09-24T14:34:04.571+08:00  WARN 19228 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-09-24T14:34:04.571+08:00  WARN 19228 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-09-24T14:34:04.624+08:00  INFO 19228 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T14:34:04.630+08:00  INFO 19228 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T14:34:04.630+08:00  INFO 19228 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T14:34:04.631+08:00  INFO 19228 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T14:34:04.631+08:00  INFO 19228 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:45:15.657+08:00  INFO 25468 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:45:15.670+08:00  INFO 25468 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2023-09-27T22:45:15.671+08:00  INFO 25468 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2023-09-27T22:45:15.671+08:00  INFO 25468 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-09-27T22:45:15.671+08:00  INFO 25468 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2023-09-27T22:45:15.672+08:00  INFO 25468 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-27T22:45:15.677+08:00  INFO 25468 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-27T22:45:17.587+08:00  INFO 15040 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 15040 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
+2023-09-27T22:45:17.588+08:00  INFO 15040 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T22:45:18.014+08:00  INFO 15040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-27T22:45:18.015+08:00  INFO 15040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-27T22:45:18.036+08:00  INFO 15040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-09-27T22:45:18.454+08:00  INFO 15040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2023-09-27T22:45:18.454+08:00  INFO 15040 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2023-09-27T22:45:18.455+08:00  INFO 15040 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2023-09-27T22:45:18.456+08:00  INFO 15040 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2023-09-27T22:45:18.462+08:00  INFO 15040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-27T22:45:18.462+08:00  INFO 15040 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-27T22:45:18.522+08:00  INFO 15040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-27T22:45:18.522+08:00  INFO 15040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 904 ms
+2023-09-27T22:45:18.993+08:00  WARN 15040 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
+2023-09-27T22:45:18.994+08:00  WARN 15040 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-09-27T22:45:19.070+08:00  INFO 15040 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:45:19.077+08:00  INFO 15040 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:45:19.078+08:00  INFO 15040 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:45:19.078+08:00  INFO 15040 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:45:19.078+08:00  INFO 15040 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -594,18 +589,18 @@ Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubl
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T14:34:04.631+08:00  INFO 19228 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2023-09-24T14:34:04.631+08:00  INFO 19228 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T14:34:04.631+08:00  INFO 19228 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@30c7be6f
-2023-09-24T14:34:04.633+08:00  INFO 19228 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T14:34:04.916+08:00  INFO 19228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
-2023-09-24T14:34:04.924+08:00  INFO 19228 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.334 seconds (process running for 4.325)
-2023-09-24T14:34:04.927+08:00  INFO 19228 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T14:34:04.927+08:00  INFO 19228 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
-2023-09-24T14:34:04.927+08:00  INFO 19228 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T14:34:04.927+08:00  INFO 19228 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T14:34:04.927+08:00  INFO 19228 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T14:34:04.927+08:00  INFO 19228 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2023-09-27T22:45:19.078+08:00  INFO 15040 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-09-27T22:45:19.078+08:00  INFO 15040 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:45:19.079+08:00  INFO 15040 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@7adae08e
+2023-09-27T22:45:19.080+08:00  INFO 15040 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:45:19.377+08:00  INFO 15040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2023-09-27T22:45:19.385+08:00  INFO 15040 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.12 seconds (process running for 2.566)
+2023-09-27T22:45:19.388+08:00  INFO 15040 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-09-27T22:45:19.388+08:00  INFO 15040 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2023-09-27T22:45:19.388+08:00  INFO 15040 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-27T22:45:19.388+08:00  INFO 15040 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-09-27T22:45:19.388+08:00  INFO 15040 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-09-27T22:45:19.389+08:00  INFO 15040 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -613,95 +608,10 @@ Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubl
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2023-09-24T14:34:04.927+08:00  INFO 19228 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2023-09-24T14:34:04.928+08:00  INFO 19228 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T14:34:04.928+08:00  INFO 19228 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T14:34:14.933+08:00  INFO 19228 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
-2023-09-24T14:34:14.944+08:00  INFO 19228 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-24T14:34:15.694+08:00  INFO 19228 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@528dc9f1
-2023-09-24T14:34:15.696+08:00  INFO 19228 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-24T14:34:16.687+08:00 ERROR 19228 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.JobRunShell              : Job DEFAULT.winner_select:1 threw an unhandled Exception: 
-
-java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.HashMap.get(Object)" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:226) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
-	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
-	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
-	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
-
-2023-09-24T14:34:16.690+08:00 ERROR 19228 --- [DefaultQuartzScheduler_Worker-1] org.quartz.core.ErrorLogger              : Job (DEFAULT.winner_select:1 threw an exception.
-
-org.quartz.SchedulerException: Job threw an unhandled exception.
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:213) ~[quartz-2.3.2.jar:na]
-	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573) ~[quartz-2.3.2.jar:na]
-Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.HashMap.get(Object)" is null
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.bfdauction(CrowdOsAlgorithmServiceImpl.java:226) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.auctionByTaskType(CrowdOsAlgorithmServiceImpl.java:90) ~[classes/:na]
-	at com.inrsystem.service.impl.CrowdOsAlgorithmServiceImpl.getAllowedTeam(CrowdOsAlgorithmServiceImpl.java:56) ~[classes/:na]
-	at com.inrsystem.quart.SelectWinner.nextStep(SelectWinner.java:25) ~[classes/:na]
-	at com.inrsystem.quart.QuartzJob.execute(QuartzJob.java:71) ~[classes/:na]
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:202) ~[quartz-2.3.2.jar:na]
-	... 1 common frames omitted
-
-2023-09-24T14:35:44.913+08:00  INFO 19228 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T14:35:44.923+08:00  INFO 19228 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
-2023-09-24T14:35:44.923+08:00  INFO 19228 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2023-09-24T14:35:44.923+08:00  INFO 19228 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2023-09-24T14:35:44.924+08:00  INFO 19228 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2023-09-24T14:35:44.925+08:00  INFO 19228 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-24T14:35:44.928+08:00  INFO 19228 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-24T14:35:47.045+08:00  INFO 24684 --- [main] com.inrsystem.InrSystemApplication       : Starting InrSystemApplication using Java 17.0.8 with PID 24684 (D:\idea\IdeaProjects\INRSystem\target\classes started by 风之别鹤 in D:\idea\IdeaProjects\INRSystem)
-2023-09-24T14:35:47.046+08:00  INFO 24684 --- [main] com.inrsystem.InrSystemApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-24T14:35:47.481+08:00  INFO 24684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2023-09-24T14:35:47.484+08:00  INFO 24684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-09-24T14:35:47.505+08:00  INFO 24684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2023-09-24T14:35:47.966+08:00  INFO 24684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
-2023-09-24T14:35:47.967+08:00  INFO 24684 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
-2023-09-24T14:35:47.968+08:00  INFO 24684 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
-2023-09-24T14:35:47.970+08:00  INFO 24684 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
-2023-09-24T14:35:47.983+08:00  INFO 24684 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-24T14:35:47.984+08:00  INFO 24684 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-09-24T14:35:48.063+08:00  INFO 24684 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-24T14:35:48.063+08:00  INFO 24684 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 988 ms
-2023-09-24T14:35:48.669+08:00  WARN 24684 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.inrsystem.dao.Team_event".
-2023-09-24T14:35:48.669+08:00  WARN 24684 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.inrsystem.dao.Team_event ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-09-24T14:35:48.723+08:00  INFO 24684 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T14:35:48.730+08:00  INFO 24684 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T14:35:48.730+08:00  INFO 24684 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T14:35:48.731+08:00  INFO 24684 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T14:35:48.731+08:00  INFO 24684 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2023-09-24T14:35:48.732+08:00  INFO 24684 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2023-09-24T14:35:48.732+08:00  INFO 24684 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T14:35:48.732+08:00  INFO 24684 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@210a26b
-2023-09-24T14:35:48.733+08:00  INFO 24684 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T14:35:49.444+08:00  INFO 24684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
-2023-09-24T14:35:49.456+08:00  INFO 24684 --- [main] com.inrsystem.InrSystemApplication       : Started InrSystemApplication in 2.743 seconds (process running for 3.353)
-2023-09-24T14:35:49.461+08:00  INFO 24684 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2023-09-24T14:35:49.461+08:00  INFO 24684 --- [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
-2023-09-24T14:35:49.461+08:00  INFO 24684 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2023-09-24T14:35:49.463+08:00  INFO 24684 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
-2023-09-24T14:35:49.463+08:00  INFO 24684 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2023-09-24T14:35:49.463+08:00  INFO 24684 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2023-09-24T14:35:49.463+08:00  INFO 24684 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2023-09-24T14:35:49.463+08:00  INFO 24684 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
-2023-09-24T14:35:49.463+08:00  INFO 24684 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2023-09-24T14:36:01.178+08:00  INFO 24684 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
-2023-09-24T14:36:01.388+08:00  INFO 24684 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-24T14:36:02.949+08:00  INFO 24684 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33a4f269
-2023-09-24T14:36:02.955+08:00  INFO 24684 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-27T22:45:19.389+08:00  INFO 15040 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-09-27T22:45:19.389+08:00  INFO 15040 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-09-27T22:45:19.389+08:00  INFO 15040 --- [main] org.quartz.core.QuartzScheduler          : Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2023-09-27T22:45:29.394+08:00  INFO 15040 --- [DefaultQuartzScheduler_Worker-1] c.i.s.impl.CrowdOsAlgorithmServiceImpl   : 调用算法接口，获取竞标获胜者
+2023-09-27T22:45:29.405+08:00  INFO 15040 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-27T22:45:30.127+08:00  INFO 15040 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1902cedd
+2023-09-27T22:45:30.128+08:00  INFO 15040 --- [DefaultQuartzScheduler_Worker-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
